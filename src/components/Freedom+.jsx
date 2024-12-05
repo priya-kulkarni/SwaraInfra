@@ -232,6 +232,9 @@ const Accordion = () => {
         },
   ];
   return (
+    <div className="accordion-container">
+      {/* Add Heading at the Top */}
+      <h1 className="accordion-heading">Our Freedomplus Services</h1>
     <div className="accordion">
       {menuitems.map((item, index) => (
         <div key={index} className="accordion-item">
@@ -259,6 +262,7 @@ const Accordion = () => {
           )}
         </div>
       ))}
+    </div>
     </div>
   );
 };
