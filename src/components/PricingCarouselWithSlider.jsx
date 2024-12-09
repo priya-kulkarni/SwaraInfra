@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import PremiumPage from "./Premium";
 import Premiumplus from "./Premium+";
@@ -14,6 +14,8 @@ import "../styles/PricingCarouselWithSlider.css";
 const PricingCarouselWithSlider = () => {
   const [activeCard, setActiveCard] = useState(null); // Track the active card
   const [animationKey, setAnimationKey] = useState(0); // Key to trigger animation
+  const [priceRange, setPriceRange] = useState(2170); // Initial price matches the first card
+  const sliderRef = useRef(null); // Ref to control the carousel
 
   const plans = [
     {
@@ -93,13 +95,32 @@ const PricingCarouselWithSlider = () => {
     setAnimationKey((prevKey) => prevKey + 1); // Trigger animation
   };
 
+  const handleSliderChange = (value) => {
+    setPriceRange(value);
+    const targetIndex = plans.findIndex((plan) => plan.price === value);
+    if (targetIndex !== -1 && sliderRef.current) {
+      sliderRef.current.slickGoTo(targetIndex);
+      setActiveCard(plans[targetIndex]); // Update active card to match the selected slider value
+    }
+  };
+
   return (
     <div className="carousel-container">
       <h2 className="carousel-header">Building Packages</h2>
       <p className="carousel-subtext">Click on a card to display more details!</p>
+      <div className="price-slider">
+        <input
+          type="range"
+          min="0"
+          max={plans.length - 1} // Set the range based on the number of plans
+          value={plans.findIndex((plan) => plan.price === priceRange)}
+          onChange={(e) => handleSliderChange(plans[Number(e.target.value)].price)}
+          className="slider"
+        />
+      </div>
 
       {/* Main Slider */}
-      <Slider {...settings}>
+      <Slider {...settings} ref={sliderRef}>
         {plans.map((plan, index) => (
           <div
             key={index}

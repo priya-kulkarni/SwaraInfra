@@ -1,9 +1,9 @@
 /* Carousel Container */
 .carousel-container {
   text-align: center;
-  background: #f9f9f9;
   padding: 2rem;
   color: #333;
+  background: none; /* Removed background color */
 }
 
 .carousel-header {
@@ -17,6 +17,10 @@
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: #666;
+}
+
+.price-slider{
+  padding-bottom: 40px;
 }
 
 /* Pricing Card */
@@ -105,13 +109,13 @@
 .active-card {
   margin: 20px auto;
   padding: 20px;
-  /* background-color: #fff; */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 90%;
   animation: slide-up 0.5s ease, highlight 0.5s ease;
 }
 
+/* Keyframes */
 @keyframes slide-up {
   from {
     transform: translateY(30px);
@@ -124,6 +128,8 @@
 }
 
 
+
+/* Price Slider */
 .price-slider {
   margin-bottom: 2rem;
   display: flex;
@@ -153,6 +159,7 @@
   cursor: pointer;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .pricing-card {
     width: 90%;

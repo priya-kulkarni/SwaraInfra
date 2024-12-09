@@ -24,7 +24,7 @@
 }
 
 .why-choose-us h2 {
-  color: #ffa500;
+  color: #ffc500;
   font-size: 28px;
   margin-bottom: 20px;
   position: relative;
@@ -35,7 +35,7 @@
   display: block;
   width: 50px;
   height: 3px;
-  background-color: #ffa500;
+  background-color: #ffc500;
   margin-top: 5px;
 }
 
@@ -67,13 +67,13 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   margin: 5px 0;
-  padding: 20px 20px;  /* Increased padding for bigger size */
-  font-size: 18px; /* Larger text */
+  padding: 20px 20px;  
+  font-size: 18px; 
   transition: background-color 0.3s ease;
-  height: auto;  /* Allow it to grow based on content */
+  height: auto;  
   min-height: 50px; 
-  width: 100%;  /* Ensure it takes up full width of its container */
-  box-sizing: border-box; /* Ensure padding is accounted for */
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
 
@@ -82,14 +82,14 @@
 }
 
 .about-us {
-  flex: 1; /* Takes up equal space */
+  flex: 1; 
   padding: 30px;
   box-sizing: border-box;
   text-align: center;
 }
 
 .about-us h2 {
-  color: #ffa500;
+  color: #ffc500;
   font-size: 28px;
   margin-bottom: 20px;
   position: relative;
@@ -100,7 +100,7 @@
   display: block;
   width: 50px;
   height: 3px;
-  background-color: #ffa500;
+  background-color: #ffc500;
   margin: 5px auto;
 }
 
@@ -123,7 +123,7 @@
 }
 
 .thumbnail-gallery img {
-  width: 120px;
+  width: 140px;
   height: 80px;
   border-radius: 5px;
   cursor: pointer;
