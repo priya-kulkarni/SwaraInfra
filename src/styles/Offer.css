@@ -21,7 +21,7 @@ body {
 .offer-section h2 {
   font-size: 28px; /* Slightly bigger for prominence */
   margin-bottom: 20px;
-  color: #ffa500;
+  color: #ffc500;
 }
 
 .cards {
@@ -62,7 +62,7 @@ body {
 
 .card1 button {
   padding: 10px 20px;
-  background-color: #ffa500;
+  background-color: #ffc500;
   border: none;
   color: white;
   border-radius: 5px;
@@ -71,7 +71,7 @@ body {
 }
 
 .card1 button:hover {
-  background-color: darkorange;
+  background-color: #ffe500;
 }
 
 /* Awesome Facts Section */

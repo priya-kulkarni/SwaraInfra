@@ -68,6 +68,13 @@ const PartnersTestimonials = () => {
               />
               <p>Partner 3</p>
             </div>
+            {/* <div className="partner-card">
+              <img
+                src="https://www.swarainfra.homes/static/media/kamdenu-removebg-preview.37bb867c618e4a9bf62a.png"
+                alt="Partner 3"
+              />
+              <p>Partner 4</p>
+            </div> */}
           </div>
         </div>
 

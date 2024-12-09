@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import PremiumPage from "./Premium"; 
+import PremiumPage from "./Premium";
 import Premiumplus from "./Premium+";
-import Luxury from "./Luxury"; 
+import Luxury from "./Luxury";
 import Luxuryplus from "./Luxury+";
-import FreedomPage from "./Freedom"; 
+import FreedomPage from "./Freedom";
 import FreedomPlus from "./Freedom+";
 import TheOne from "./TheOne";
 import "slick-carousel/slick/slick.css";
@@ -13,58 +13,58 @@ import "../styles/PricingCarouselWithSlider.css";
 
 const PricingCarouselWithSlider = () => {
   const [activeCard, setActiveCard] = useState(null); // Track the active card
+  const [animationKey, setAnimationKey] = useState(0); // Key to trigger animation
 
   const plans = [
     {
       title: "Premium",
       price: 2170,
       buttonText: "Explore Premium",
-      features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"], // Ensure this array is always present
-      component: <PremiumPage />, // Link to the Premium Page Component
+      features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
+      component: <PremiumPage />,
     },
     {
       title: "Premium+",
       price: 2399,
       buttonText: "Upgrade to Premium+",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
-      component: <Premiumplus />, // Link to the Luxury Page Component (for example)
+      component: <Premiumplus />,
     },
     {
       title: "Luxury",
       price: 2620,
       buttonText: "Discover Luxury",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
-      component: <Luxury />, // Link to the Luxury Page Component
+      component: <Luxury />,
     },
     {
       title: "LuxuryPlus",
       price: 2799,
       buttonText: "Explore Luxury+",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
-      component: <Luxuryplus />, // Link to the Luxury Page Component
+      component: <Luxuryplus />,
     },
     {
       title: "Freedom",
       price: 2499,
       buttonText: "Start with Freedom",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
-      component: <FreedomPage />, // Link to the Freedom Page Component
+      component: <FreedomPage />,
     },
     {
       title: "Freedomplus",
       price: 2650,
       buttonText: "Upgrade to Freedom+",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
-      component: <FreedomPlus />, // Link to the Freedom Page Component
+      component: <FreedomPlus />,
     },
     {
       title: "TheOneplus",
       price: 3399,
       buttonText: "Experience The One+",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
-      component: <TheOne />, // Link to the Freedom Page Component
+      component: <TheOne />,
     },
-    
   ];
 
   const settings = {
@@ -73,7 +73,10 @@ const PricingCarouselWithSlider = () => {
     slidesToShow: 3,
     infinite: true,
     autoplay: false,
-    afterChange: (index) => setActiveCard(null), // Reset active card when slider changes
+    afterChange: () => {
+      setActiveCard(null); // Reset active card when slider changes
+      setAnimationKey((prevKey) => prevKey + 1); // Restart animation
+    },
     responsive: [
       {
         breakpoint: 768,
@@ -85,7 +88,9 @@ const PricingCarouselWithSlider = () => {
   };
 
   const handleCardClick = (plan) => {
-    setActiveCard(plan); // Set active card to the clicked plan
+    if (activeCard === plan) return; // If clicking the same card, do nothing
+    setActiveCard(plan); // Set active card
+    setAnimationKey((prevKey) => prevKey + 1); // Trigger animation
   };
 
   return (
@@ -99,17 +104,15 @@ const PricingCarouselWithSlider = () => {
           <div
             key={index}
             className="pricing-card"
-            onClick={() => handleCardClick(plan)} // Show the clicked plan's details
+            onClick={() => handleCardClick(plan)}
           >
             <h3>{plan.title}</h3>
             <p className="price">Price: Rs {plan.price}</p>
             <ul>
               {plan.features && plan.features.length > 0 ? (
-                plan.features.map((feature, i) => (
-                  <li key={i}>{feature}</li>
-                ))
+                plan.features.map((feature, i) => <li key={i}>{feature}</li>)
               ) : (
-                <li>No features available</li> 
+                <li>No features available</li>
               )}
             </ul>
             <button className="buy-btn">{plan.buttonText}</button>
@@ -117,10 +120,10 @@ const PricingCarouselWithSlider = () => {
         ))}
       </Slider>
 
-      {/* Display Active Card Details (on same page) */}
+      {/* Display Active Card Details with Animation */}
       {activeCard && (
-        <div className="active-card">
-          {activeCard.component} 
+        <div key={animationKey} className="active-card animated-card">
+          {activeCard.component}
         </div>
       )}
     </div>
