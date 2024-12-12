@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import BackToTopButton from './components/Backtotop';
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
       <div>
         <TopBar/>
       <Navbar/>
+      <BackToTopButton/>
         {/* Route Definitions */}
         <Routes>
           <Route path="/" element={<Home />} />

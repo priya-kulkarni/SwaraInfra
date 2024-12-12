@@ -12,10 +12,11 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/PricingCarouselWithSlider.css";
 
 const PricingCarouselWithSlider = () => {
-  const [activeCard, setActiveCard] = useState(null); // Track the active card
-  const [animationKey, setAnimationKey] = useState(0); // Key to trigger animation
-  const [priceRange, setPriceRange] = useState(2170); // Initial price matches the first card
-  const sliderRef = useRef(null); // Ref to control the carousel
+  const [activeCard, setActiveCard] = useState(null);
+  const [animationKey, setAnimationKey] = useState(0);
+  const [priceRange, setPriceRange] = useState(2170);
+  const sliderRef = useRef(null);
+  const activeCardRef = useRef(null); // Ref for the active card container
 
   const plans = [
     {
@@ -76,8 +77,8 @@ const PricingCarouselWithSlider = () => {
     infinite: true,
     autoplay: false,
     afterChange: () => {
-      setActiveCard(null); // Reset active card when slider changes
-      setAnimationKey((prevKey) => prevKey + 1); // Restart animation
+      setActiveCard(null);
+      setAnimationKey((prevKey) => prevKey + 1);
     },
     responsive: [
       {
@@ -90,9 +91,14 @@ const PricingCarouselWithSlider = () => {
   };
 
   const handleCardClick = (plan) => {
-    if (activeCard === plan) return; // If clicking the same card, do nothing
-    setActiveCard(plan); // Set active card
-    setAnimationKey((prevKey) => prevKey + 1); // Trigger animation
+    if (activeCard === plan) return;
+    setActiveCard(plan);
+    setAnimationKey((prevKey) => prevKey + 1);
+
+    // Scroll to the active card details
+    setTimeout(() => {
+      activeCardRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 200); // Delay to ensure the component renders before scrolling
   };
 
   const handleSliderChange = (value) => {
@@ -100,7 +106,7 @@ const PricingCarouselWithSlider = () => {
     const targetIndex = plans.findIndex((plan) => plan.price === value);
     if (targetIndex !== -1 && sliderRef.current) {
       sliderRef.current.slickGoTo(targetIndex);
-      setActiveCard(plans[targetIndex]); // Update active card to match the selected slider value
+      setActiveCard(plans[targetIndex]);
     }
   };
 
@@ -112,7 +118,7 @@ const PricingCarouselWithSlider = () => {
         <input
           type="range"
           min="0"
-          max={plans.length - 1} // Set the range based on the number of plans
+          max={plans.length - 1}
           value={plans.findIndex((plan) => plan.price === priceRange)}
           onChange={(e) => handleSliderChange(plans[Number(e.target.value)].price)}
           className="slider"
@@ -122,11 +128,7 @@ const PricingCarouselWithSlider = () => {
       {/* Main Slider */}
       <Slider {...settings} ref={sliderRef}>
         {plans.map((plan, index) => (
-          <div
-            key={index}
-            className="pricing-card"
-            onClick={() => handleCardClick(plan)}
-          >
+          <div key={index} className="pricing-card" onClick={() => handleCardClick(plan)}>
             <h3>{plan.title}</h3>
             <p className="price">Price: Rs {plan.price}</p>
             <ul>
@@ -141,9 +143,9 @@ const PricingCarouselWithSlider = () => {
         ))}
       </Slider>
 
-      {/* Display Active Card Details with Animation */}
+      {/* Display Active Card Details */}
       {activeCard && (
-        <div key={animationKey} className="active-card animated-card">
+        <div ref={activeCardRef} key={animationKey} className="active-card animated-card">
           {activeCard.component}
         </div>
       )}

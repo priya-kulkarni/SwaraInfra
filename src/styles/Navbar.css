@@ -1,27 +1,22 @@
+/* General Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: white;
-}
-.gradient-background {
-  background: linear-gradient(180deg, #fff0e0, #ffd9c2);
-  height: 100vh; 
-  width: 100px;
-
+  position: relative;
+  z-index: 10;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px; 
-  padding: 10px 10px;
-  /* Adds space between the logo and text */
+  gap: 10px;
 }
 
 .navbar-logo {
-  width: 50px; 
+  width: 50px;
   height: auto;
 }
 
@@ -35,10 +30,11 @@
 .nav-links {
   display: flex;
   list-style: none;
+  gap: 20px;
 }
 
 .nav-links li {
-  margin: 0 15px;
+  margin: 0;
 }
 
 .nav-links a {
@@ -46,4 +42,107 @@
   font-family: Arial, sans-serif;
   color: black;
   font-weight: bold;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  border-radius: 3px;
+}
+
+/* Responsive Styles */
+
+/* For devices with max-width: 1024px */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    display: flex; /* Ensure nav-links remain visible */
+    gap: 15px;
+  }
+
+  .logo-text {
+    font-size: 22px;
+  }
+}
+
+/* For devices with max-width: 768px */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide default nav-links on smaller screens */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 200px;
+    text-align: right;
+  }
+
+  .nav-links.active {
+    display: flex; /* Display nav-links when hamburger is clicked */
+  }
+
+  .hamburger {
+    display: flex; /* Enable hamburger menu for mobile */
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+}
+
+/* For devices with max-width: 425px */
+@media screen and (max-width: 425px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 2.5px;
+  }
+}
+
+/* For devices with max-width: 375px */
+@media screen and (max-width: 375px) {
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .hamburger div {
+    width: 20px;
+    height: 2px;
+  }
+}
+
+/* For devices with max-width: 320px */
+@media screen and (max-width: 320px) {
+  .navbar {
+    padding: 8px 10px;
+  }
+
+  .logo-text {
+    font-size: 14px;
+  }
+
+  .hamburger div {
+    width: 18px;
+    height: 1.5px;
+  }
 }

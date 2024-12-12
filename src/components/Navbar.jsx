@@ -1,10 +1,14 @@
-// import { BrowserRouter as  Link } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className="navbar">
       <div className="logo-container">
@@ -15,21 +19,20 @@ function Navbar() {
         />
         <div className="logo-text">Swara Infra</div>
       </div>
-      {/* <ul className="nav-links"> */}
-        {/* <li><a href="#home">Home</a></li>
-        <li><a href="/construction">Construction</a></li>
-        <li><a href="#packages">Packages</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact Us</a></li> */}
-
-        <ul className="nav-links" >
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="/Packages">Packages</Link></li>
-
-        </ul>
+      {/* Hamburger Menu */}
+      <div className="hamburger" onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      {/* Navigation Links */}
+      <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+        <li><Link to="/projects">Projects</Link></li>
+        <li><Link to="/packages">Packages</Link></li>
+      </ul>
     </nav>
   );
 }
