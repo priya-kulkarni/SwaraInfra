@@ -6,33 +6,45 @@
   color: white;
   padding: 10px 20px;
   font-size: 0.928em;
+  flex-wrap: wrap; /* Allows wrapping for better responsiveness */
+  gap: 10px; /* Adds space between sections */
 }
 
 .social-icons {
   display: flex;
   gap: 10px; /* Adds space between the icons */
+  justify-content: center; /* Centers icons */
 }
 
 .social-icons img {
   width: 30px; /* Adjust icon size */
-  height: 30px; /* Adjust icon size */
+  height: 30px;
+  transition: transform 0.3s ease; /* Adds hover animation */
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* Slightly enlarges icon on hover */
 }
 
 .contact-info {
   display: flex;
   gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
 }
 
 .contact-info span {
   display: flex;
   align-items: center;
   gap: 5px;
+  text-align: center; /* Centers text and icons */
 }
 
 .logo {
   display: flex;
   align-items: center;
   margin-right: 20px;
+  justify-content: center;
 }
 
 .logo-image {
@@ -46,6 +58,7 @@
 @media (max-width: 1024px) {
   .top-bar {
     padding: 10px 15px;
+    gap: 15px; /* Adds spacing between sections */
   }
   .social-icons img {
     width: 25px;
@@ -62,10 +75,11 @@
 /* For devices with max-width: 768px */
 @media (max-width: 768px) {
   .top-bar {
-    flex-wrap: wrap; /* Allow elements to wrap */
+    flex-wrap: wrap; /* Allows elements to wrap */
     justify-content: center; /* Center-align content */
     padding: 10px 10px;
     text-align: center;
+    gap: 20px;
   }
   .social-icons {
     justify-content: center; /* Center social icons */
@@ -85,6 +99,7 @@
   .top-bar {
     flex-direction: column; /* Stack elements vertically */
     align-items: center;
+    gap: 15px;
   }
   .social-icons img {
     width: 20px;
@@ -94,7 +109,7 @@
     font-size: 0.8em;
     flex-direction: column; /* Stack icon and text */
     align-items: center;
-    gap: 3px;
+    gap: 5px;
   }
 }
 
@@ -102,6 +117,7 @@
 @media (max-width: 375px) {
   .top-bar {
     padding: 8px 10px;
+    gap: 10px;
   }
   .contact-info span {
     font-size: 0.75em;
@@ -117,6 +133,7 @@
   .top-bar {
     flex-direction: column;
     padding: 5px 8px;
+    gap: 10px;
   }
   .logo {
     margin-bottom: 10px;

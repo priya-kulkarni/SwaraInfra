@@ -91,10 +91,12 @@
 }
 
 .main-image {
-  width: 100%;
-  height: 300px;
+  width: 100%; /* Makes it responsive to container width */
+  max-width: 600px; /* Caps the width for larger screens */
+  max-height: 300px;
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: cover; /* Ensures proper scaling */
+  margin: 0 auto; /* Centers the image within its container */
 }
 
 .thumbnail-gallery {
@@ -130,7 +132,7 @@
 
 @media (max-width: 768px) {
   .sections-container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
   }
   .why-choose-us {
@@ -141,13 +143,22 @@
     font-size: 24px;
   }
   .dropdown-header {
-    font-size: 14px;
+    font-size: 18px;
     padding: 10px;
+  }
+  .main-image {
+    max-width: 500px; /* Adjusts for tablet-sized screens */
+    max-height: 250px;
+  }
+  .thumbnail-gallery img {
+    width: 118px;
+    height: 70px;
   }
 }
 
-@media (max-width: 426px) {
-  .why-choose-us, .about-us {
+@media (max-width: 425px) {
+  .why-choose-us,
+  .about-us {
     padding: 15px;
   }
   .why-choose-us h2 {
@@ -159,16 +170,18 @@
     padding: 8px;
   }
   .main-image {
-    height: 250px;
+    max-width: 350px; 
+    max-height: 200px;
   }
   .thumbnail-gallery img {
-    width: 100px;
+    width: 80px;
     height: 60px;
   }
 }
 
 @media (max-width: 375px) {
-  .why-choose-us, .about-us {
+  .why-choose-us,
+  .about-us {
     padding: 10px;
   }
   .why-choose-us h2 {
@@ -180,30 +193,34 @@
     padding: 8px;
   }
   .main-image {
-    height: 200px;
+    max-width: 300px; /* Reduces further for very small screens */
+    max-height: 180px;
   }
   .thumbnail-gallery img {
-    width: 80px;
+    width: 70px;
     height: 50px;
   }
 }
 
 @media (max-width: 320px) {
-  .why-choose-us, .about-us {
+  .why-choose-us,
+  .about-us {
     padding: 5px;
   }
-  .why-choose-us h2, .about-us h2 {
+  .why-choose-us h2,
+  .about-us h2 {
     font-size: 18px;
   }
   .dropdown-header {
-    font-size: 12px;
+    font-size: 10px;
     padding: 5px;
   }
   .main-image {
-    height: 180px;
+    max-width: 280px; /* Caps for the smallest screen sizes */
+    max-height: 140px;
   }
   .thumbnail-gallery img {
-    width: 70px;
+    width: 60px;
     height: 40px;
   }
 }
