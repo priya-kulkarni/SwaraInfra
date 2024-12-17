@@ -52,7 +52,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #ffc500;
+  color: #FFBC13;
 }
 
 .pricing-card ul {
@@ -68,7 +68,7 @@
 }
 
 .buy-btn {
-  background: #ffc500;
+  background: #FFBC13;
   color: #fff;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -80,7 +80,7 @@
 }
 
 .buy-btn:hover {
-  background: #e5a00f;
+  background: #FFBC13;
 }
 
 .slick-slide {
@@ -154,7 +154,7 @@
   appearance: none;
   width: 16px;
   height: 16px;
-  background: #ffc500;
+  background: #FFBC13;
   border-radius: 50%;
   cursor: pointer;
 }

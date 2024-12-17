@@ -21,7 +21,7 @@
 }
 
 .tabs button.active-tab {
-  background-color: #ffcc00;
+  background-color: #4B0082;
   font-weight: bold;
 }
 
@@ -124,6 +124,7 @@
 }
 
 .tabs button.active-tab {
-  background-color: #ffcc00;
+  background-color: #4B0082;
   font-weight: bold;
+  color: white;
 }

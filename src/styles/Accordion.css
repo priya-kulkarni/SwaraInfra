@@ -26,17 +26,17 @@
     padding: 15px;
     font-size: 18px;
     background-color: white;
-    color: #333;
+    color: black;
     transition: background-color 0.3s ease;
   }
   
   .accordion-title.active {
-    background-color: #f7c400;
-    color: #000;
+    background-color: #840dda;
+    color: black;
   }
   
   .accordion-title:hover {
-    background-color: #f7c400; /* Slight grey background on hover */
+    background-color: #840dda; /* Slight grey background on hover */
   }
   
   .accordion-content {

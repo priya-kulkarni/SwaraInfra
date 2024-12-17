@@ -11,7 +11,7 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color:#ffc500;
+    background-color:#4B0082;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -20,7 +20,7 @@
   
   .back-to-top-button:hover {
     transform: scale(1.1);
-    background-color: #ffc500; 
+    background-color: #4B0082; 
   }
   
   .double-chevron {
