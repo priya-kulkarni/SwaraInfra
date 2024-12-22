@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/HeroSection.css'; // Keep your custom styles
+import '../styles/HeroSection.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';

@@ -128,3 +128,77 @@
   font-weight: bold;
   color: white;
 }
+@media (max-width: 768px) {
+  .tabs button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    gap: 15px;
+  }
+
+  .project-card {
+    width: 100%; /* Cards take full available space in their grid column */
+  }
+
+  .project-image {
+    height: 200px;
+  }
+}
+
+
+@media (max-width: 425px) {
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    margin: 5px 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .project-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 375px) {
+  .tabs button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .project-image {
+    height: 150px;
+  }
+}
+
+@media (max-width: 320px) {
+  .tabs button {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .project-image {
+    height: 120px;
+  }
+
+  .projects-container {
+    padding: 10px;
+  }
+}

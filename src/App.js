@@ -9,6 +9,7 @@ import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTopButton from './components/Backtotop';
+import CustomCursor from './components/Cursor';
 
 
 
@@ -18,6 +19,7 @@ const App = () => {
         
     <Router basename="/SwaraInfra">
       <div>
+        <CustomCursor/>
         <TopBar/>
       <Navbar/>
       <BackToTopButton/>
