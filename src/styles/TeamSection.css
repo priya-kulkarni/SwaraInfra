@@ -1,12 +1,12 @@
 .team-section {
   text-align: center;
-  padding: 40px 20px;
+  padding: 100px 80px;
   background-color: white;
 }
 
 .team-title {
   font-size: 2rem;
-  color: #4B0082;
+  color:#4B0082;
   margin-bottom: 20px;
 }
 
@@ -24,11 +24,12 @@
   width: 100%;
   border-radius: 8px;
   margin-bottom: 10px;
-  object-fit: cover;
-  filter: none; 
+  object-fit: cover; /* Ensures images scale proportionally and fill the space */
+  filter: none; /* Remove all filters */
   opacity: 1; 
-  transition: transform 0.3s ease; 
-  }
+  /* Fully visible */
+  transition: transform 0.3s ease; /* Smooth zoom transition */
+}
 
 .team-carousel .team-member:hover .team-member-image {
   transform: scale(1.05); 

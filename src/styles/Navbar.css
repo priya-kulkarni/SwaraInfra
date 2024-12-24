@@ -18,7 +18,7 @@
 
 .social-links a {
   text-decoration: none;
-  color: blue;
+  color: #4B0082;
   font-size: 1.2em; 
   transition: color 0.3s ease, transform 0.3s ease;
 }
