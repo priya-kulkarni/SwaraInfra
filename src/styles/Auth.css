@@ -1,24 +1,25 @@
-/* Container for the login page */
-.unique-login-container {
+/* Shared container styling for login and registration */
+.unique-auth-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Full viewport height */
-    background-color: #eef2f3; /* Light grayish background */
+    height: 100vh;
+    background-color: #eef2f3; /* Light background color */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    padding: 1rem;
   }
   
-  /* Heading for the login form */
-  .unique-login-heading {
+  /* Heading for the authentication forms */
+  .unique-auth-heading {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #2c3e50; /* Darker gray-blue for the heading */
+    color: #2c3e50; /* Dark gray-blue */
   }
   
-  /* Login form container */
-  .unique-login-form {
+  /* Authentication form container */
+  .unique-auth-form {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 8px;
@@ -28,8 +29,8 @@
     text-align: left;
   }
   
-  /* Labels for input fields */
-  .unique-login-label {
+  /* Labels for form fields */
+  .unique-auth-label {
     display: block;
     margin-bottom: 0.5rem;
     color: #34495e; /* Slightly darker gray */
@@ -37,28 +38,28 @@
     font-weight: 600;
   }
   
-  /* Input fields for username and password */
-  .unique-login-input {
+  /* Input fields styling */
+  .unique-auth-input {
     width: 100%;
     padding: 0.7rem;
     margin-bottom: 1.2rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    box-sizing: border-box;
     transition: border 0.3s ease;
   }
   
-  .unique-login-input:focus {
+  .unique-auth-input:focus {
     outline: none;
     border-color: #3498db; /* Blue border on focus */
     box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
   }
   
   /* Button styling */
-  .unique-login-button {
+  .unique-auth-button {
     background-color: #3498db; /* Primary blue */
-    color: #ffffff; /* White text */
+    color: #ffffff;
     border: none;
     padding: 0.8rem;
     font-size: 1rem;
@@ -69,18 +70,35 @@
     transition: background-color 0.3s ease;
   }
   
-  .unique-login-button:hover {
-    background-color: #2980b9; /* Slightly darker blue on hover */
+  .unique-auth-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
   }
   
-  /* Responsive adjustments for small screens */
+  /* Footer links for form navigation */
+  .unique-auth-footer {
+    margin-top: 1rem;
+    color: #2c3e50;
+    font-size: 0.9rem;
+  }
+  
+  .unique-auth-footer span {
+    color: #3498db; /* Blue link color */
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .unique-auth-footer span:hover {
+    color: #2980b9; /* Darker blue on hover */
+  }
+  
+  /* Responsive design adjustments */
   @media (max-width: 480px) {
-    .unique-login-form {
+    .unique-auth-form {
       padding: 1.5rem;
       width: 100%;
     }
   
-    .unique-login-heading {
+    .unique-auth-heading {
       font-size: 1.8rem;
     }
   }
