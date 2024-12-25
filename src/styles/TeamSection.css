@@ -6,12 +6,11 @@
 
 .team-title {
   font-size: 2rem;
-  color:#4B0082;
+  color: #4B0082;
   margin-bottom: 20px;
 }
 
 .team-carousel .team-member {
-  /* background: #fff; */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -20,20 +19,17 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.team-carousel .team-member:hover {
+  transform: scale(1.05); /* Slight zoom on the card */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Increased shadow for hover effect */
+}
+
 .team-member-image {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 10px;
   object-fit: cover; /* Ensures images scale proportionally and fill the space */
-  filter: none; /* Remove all filters */
-  opacity: 1; 
-  /* Fully visible */
-  transition: transform 0.3s ease; /* Smooth zoom transition */
-}
-
-.team-carousel .team-member:hover .team-member-image {
-  transform: scale(1.05); 
-  /* Slight zoom on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
 }
 
 .team-member-name {

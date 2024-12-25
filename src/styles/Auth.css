@@ -102,3 +102,19 @@
       font-size: 1.8rem;
     }
   }
+
+  .forgot-password {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .forgot-password span {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .forgot-password span:hover {
+    color: #0056b3;
+  }
+  

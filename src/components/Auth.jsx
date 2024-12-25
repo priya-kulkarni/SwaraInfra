@@ -40,6 +40,9 @@ export const Login = ({ handleLogin }) => {
       <p className="unique-auth-footer">
         Don't have an account? <span onClick={() => navigate('/register')}>Register here</span>
       </p>
+      <p className="forgot-password">
+        <span onClick={() => navigate('/forgot-password')}>Forgot Password?</span>
+      </p>
     </div>
   );
 };

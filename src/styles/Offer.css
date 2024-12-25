@@ -5,21 +5,18 @@ body {
   box-sizing: border-box;
 }
 
-/* Container for the whole page */
 .container {
   width: 90%;
-  margin: 0 auto; /* Centers the content */
+  margin: 0 auto;
 }
 
-/* What We Offer Section */
 .offer-section {
   text-align: center;
-  padding: 50px 0; /* Add some vertical padding */
+  padding: 50px 0;
 }
 
-
 .offer-section h2 {
-  font-size: 28px; /* Slightly bigger for prominence */
+  font-size: 28px;
   margin-bottom: 20px;
   color: #4B0082;
 }
@@ -27,51 +24,61 @@ body {
 .cards {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap; /* Makes it responsive */
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .card1 {
-  width: 30%; /* Adjusted for larger screens */
+  width: 23%;
   background-color: #f9f9f9;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
   text-align: center;
-  margin-bottom: 30px; /* Added bottom margin for spacing between rows */
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card1 img {
   width: 100%;
-  height: 200px; /* Set height for consistent image sizing */
-  object-fit: cover; /* Ensures image is well-cropped */
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .card1 h3 {
   margin: 15px 0;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
+  color: #4B0082;
 }
 
 .card1 p {
-  font-size: 14px;
-  color: #666;
+  font-size: 16px;
+  color: #555;
   margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .card1 button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #4B0082;
   border: none;
   color: white;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .card1 button:hover {
-  background-color: #4B0082;
+  background-color: #6A1E9C;
+  transform: scale(1.05);
 }
 
 .facts-section {
@@ -80,7 +87,6 @@ body {
   background-image: url('https://themes247.net/html5/construction-template/demo/assets/img/bg-section-2.jpg');    
   color: white;
   background-repeat: no-repeat; 
-  /* background-position: center; */
   padding: 60px 0;
   width: 100%; 
   margin: 0; 
@@ -89,13 +95,13 @@ body {
 }
 
 .facts-section h2 {
-  font-size: 32px; /* Larger heading */
+  font-size: 32px;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 .facts-section h3 {
-  font-size: 24px; /* Set size for subheading */
+  font-size: 24px;
   margin-bottom: 30px;
 }
 
@@ -103,43 +109,42 @@ body {
   display: flex;
   justify-content: center;
   gap: 50px;
-  flex-wrap: wrap; /* Makes it responsive */
+  flex-wrap: wrap;
 }
 
 .fact {
   text-align: center;
-  max-width: 250px; /* Prevents facts from becoming too large */
+  max-width: 250px;
   margin-bottom: 20px;
 }
 
 .fact h4 {
-  font-size: 30px; /* Increased size for better visibility */
+  font-size: 30px;
   color: white;
   font-weight: bold;
 }
 
 .fact p {
-  font-size: 16px; /* Slightly larger text */
+  font-size: 16px;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .cards {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .card1 {
-      width: 80%; /* Full width on smaller screens */
-      margin-bottom: 20px;
+    width: 23%;
+    margin-bottom: 20px;
   }
 
   .facts {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .fact {
-      width: 80%; /* Ensure fact items don't stretch too wide */
+    width: 80%;
   }
 }

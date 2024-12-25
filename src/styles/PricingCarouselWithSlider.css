@@ -29,7 +29,7 @@
   color: #333;
   padding: 1.5rem;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.2); /* Added top and bottom shadows */
   width: 280px;
   margin: 0 auto;
   text-align: center;
