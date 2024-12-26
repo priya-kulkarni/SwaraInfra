@@ -1,11 +1,10 @@
-/* Slider Container */
 .slider-container {
   text-align: center;
   padding: 40px 20px;
-  background-color: #f9f9f9; /* Light background color for contrast */
+  background-color: white;
+  margin-left: 50px;
 }
 
-/* Header Style */
 .slider-container h2 {
   margin-bottom: 10px;
   font-size: 28px;
@@ -13,114 +12,82 @@
   font-weight: 700;
 }
 
-/* Paragraph Style */
 .slider-container p {
   margin-bottom: 30px;
   font-size: 16px;
   color: #555;
 }
 
-/* Slider Card Style */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  justify-items: center; /* Center the cards */
+  padding: 10px;
+}
+
 .slider-card {
-  background: #fff; /* Brighter background for the card */
-  border: none;
-  color: #333;
+  background: white; /* Changed to white */
+  border: 2px solid #4B0082; /* Border with the specified color */
+  color: black;
   border-radius: 12px;
   padding: 25px 20px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
-  max-width: 300px; 
-  margin: 0 10px; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease, margin 0.3s ease;
+  width: 100%; /* Ensure cards maintain consistent width */
+  height: 200px; /* Fixed height for uniformity */
+  max-width: 300px; /* Limit card width */
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect for Slider Card */
 .slider-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-  margin-top: 10px; /* Slight margin-top on hover for better lift effect */
 }
 
-/* Card Icon Styling */
 .card-icon {
   font-size: 50px;
-  color: #FFBC13; /* Icon color to make it stand out */
+  color: black;
   margin-bottom: 15px;
   transition: color 0.3s ease;
 }
 
-/* Hover Effect for Card Icon */
 .slider-card:hover .card-icon {
-  color: #FFBC13; /* Keep the icon color consistent on hover */
+  color: black;
 }
 
-/* Card Title */
 .slider-card h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: black;
   margin-bottom: 10px;
 }
 
-/* Card Description */
 .slider-card p {
   font-size: 14px;
-  color: #333;
+  color: black;
   line-height: 1.6;
-  margin-bottom: 10px;
 }
 
-/* Navigation Arrows */
-.slick-prev:before,
-.slick-next:before {
-  color: #333;
-  font-size: 30px;
-  transition: color 0.3s ease;
-}
-
-.slick-prev:hover:before,
-.slick-next:hover:before {
-  color: #FFBC13; 
-}
-
-.slick-dots li button:before {
-  color: #333;
-  font-size: 12px;
-  transition: color 0.3s ease;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #FFBC13; 
-  font-size: 14px;
-}
-
-.slick-dots li button:before:hover {
-  color: #FFBC13; /* Change color of dots on hover */
-}
-
-/* Reduced Gap Between Cards */
-.slick-slide {
-  margin: 0 10px; /* Reduced space between slides */
-}
-
-.slick-track {
-  display: flex;
-  justify-content: center; /* Ensures cards are centered */
-}
-
-/* Responsive Design for Smaller Screens */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row on smaller screens */
+    gap: 15px;
+  }
+
   .slider-card {
-    max-width: 90%; /* Adjust card width for smaller screens */
-    margin: 0 auto;
+    height: 280px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 425px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* One card per row on mobile screens */
   }
 
-  .slick-prev:before,
-  .slick-next:before {
-    font-size: 18px; /* Smaller arrows for mobile */
-  }
-
-  .slick-dots li button:before {
-    font-size: 10px; /* Smaller dots for mobile */
+  .slider-card {
+    height: 260px; /* Adjust height for mobile screens */
   }
 }

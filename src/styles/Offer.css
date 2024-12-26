@@ -7,16 +7,17 @@ body {
 
 .container {
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto; 
 }
 
 .offer-section {
   text-align: center;
-  padding: 50px 0;
+  padding: 50px 0; 
 }
 
+
 .offer-section h2 {
-  font-size: 28px;
+  font-size: 28px; 
   margin-bottom: 20px;
   color: #4B0082;
 }
@@ -24,62 +25,51 @@ body {
 .cards {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 30px;
+  flex-wrap: wrap; 
 }
 
 .card1 {
-  width: 23%;
+  width: 30%; 
   background-color: #f9f9f9;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   text-align: center;
-  margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card1:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px; 
+  border: 2px solid #ddd;
 }
 
 .card1 img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 200px; 
+  object-fit: cover; 
   border-radius: 10px;
-  margin-bottom: 15px;
 }
 
 .card1 h3 {
   margin: 15px 0;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  color: #4B0082;
 }
 
 .card1 p {
-  font-size: 16px;
-  color: #555;
+  font-size: 14px;
+  color: #666;
   margin-bottom: 20px;
-  line-height: 1.5;
 }
 
-.card1 button {
-  padding: 12px 24px;
-  background-color: #4B0082;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+.card1:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-.card1 button:hover {
-  background-color: #6A1E9C;
-  transform: scale(1.05);
+.fact:hover {
+  transform: scale(1.05); 
+  transition: transform 0.3s ease; 
 }
+
 
 .facts-section {
   text-align: center;
@@ -95,13 +85,13 @@ body {
 }
 
 .facts-section h2 {
-  font-size: 32px;
+  font-size: 32px; 
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 .facts-section h3 {
-  font-size: 24px;
+  font-size: 24px; 
   margin-bottom: 30px;
 }
 
@@ -109,42 +99,42 @@ body {
   display: flex;
   justify-content: center;
   gap: 50px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
 }
 
 .fact {
   text-align: center;
-  max-width: 250px;
+  max-width: 250px; 
   margin-bottom: 20px;
 }
 
 .fact h4 {
-  font-size: 30px;
+  font-size: 30px; 
   color: white;
   font-weight: bold;
 }
 
 .fact p {
-  font-size: 16px;
+  font-size: 16px; 
 }
 
 @media (max-width: 768px) {
   .cards {
-    flex-direction: row;
-    justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
   }
 
   .card1 {
-    width: 23%;
-    margin-bottom: 20px;
+      width: 80%; 
+      margin-bottom: 20px;
   }
 
   .facts {
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
   }
 
   .fact {
-    width: 80%;
+      width: 80%; 
   }
 }

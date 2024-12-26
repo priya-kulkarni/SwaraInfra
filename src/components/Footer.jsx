@@ -5,9 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-column">
-        <a href="/" aria-label="Home">
-          <img src="https://swarainfra.homes/static/media/logo.b9aec6b0bfc6345fdc2e.png" alt="Swara Infra Logo" className="footer-logo" />
-        </a>
+        <img src="https://swarainfra.homes/static/media/logo.b9aec6b0bfc6345fdc2e.png" alt="Swara Infra Logo" className="footer-logo" />
         <h1>Swara Infra</h1>
         <div className="social-links2">
           <a href="#" aria-label="Instagram">
@@ -51,9 +49,8 @@ const Footer = () => {
           Opp. Giants School Akshay Park, Gokul Road Hubballi
         </p>
         <p>Phone No: [Your Phone Number]</p>
-        <p>Email ID: [Your Email ID]</p>      
-        <p>&copy; {new Date().getFullYear()} Swara Infra. All rights reserved.</p>
-        </div>
+        <p>Email ID: [Your Email ID]</p>
+      </div>
     </footer>
   );
 };

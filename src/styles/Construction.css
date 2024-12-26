@@ -6,9 +6,7 @@
 .construction-container {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
+  padding: 20px;
 }
 
 .sections-container {
@@ -49,7 +47,7 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   margin: 5px 0;
-  padding: 15px 15px;
+  padding: 15px 10px;
   font-size: 16px;
   transition: background-color 0.3s ease;
   text-align: left;
@@ -65,7 +63,6 @@
   display: block;
 }
 
-/* About Us Section */
 .about-us {
   flex: 1;
   padding: 30px;
@@ -89,7 +86,6 @@
   margin: 5px auto;
 }
 
-/* Image Gallery */
 .image-gallery {
   position: relative;
 }
@@ -125,71 +121,35 @@
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .sections-container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
   }
-
-  .construction-container {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .why-choose-us,
-  .about-us {
+  .about-us h2,
+  .why-choose-us h2 {
     text-align: center;
-  }
-
-  .why-choose-us h2,
-  .about-us h2 {
-    font-size: 24px;
-  }
-
-  .dropdown-header {
-    font-size: 18px;
-    padding: 12px;
-  }
-
-  .main-image {
-    max-width: 500px;
-    max-height: 250px;
-  }
-
-  .thumbnail-gallery img {
-    width: 120px;
-    height: 70px;
   }
 }
 
 @media (max-width: 768px) {
   .sections-container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
   }
-
-  .construction-container {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .why-choose-us {
     padding: 15px;
     text-align: center;
   }
-
   .why-choose-us h2 {
-    font-size: 22px;
+    font-size: 24px;
   }
-
   .dropdown-header {
     font-size: 18px;
     padding: 10px;
   }
-
   .main-image {
-    max-width: 500px;
+    max-width: 500px; /* Adjusts for tablet-sized screens */
     max-height: 250px;
   }
-
   .thumbnail-gallery img {
     width: 118px;
     height: 70px;
@@ -201,27 +161,18 @@
   .about-us {
     padding: 15px;
   }
-
-  .construction-container {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .why-choose-us h2 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 15px;
   }
-
   .dropdown-header {
     font-size: 14px;
     padding: 8px;
   }
-
   .main-image {
-    max-width: 350px;
+    max-width: 350px; 
     max-height: 200px;
   }
-
   .thumbnail-gallery img {
     width: 80px;
     height: 60px;
@@ -233,27 +184,18 @@
   .about-us {
     padding: 10px;
   }
-
-  .construction-container {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .why-choose-us h2 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
   }
-
   .dropdown-header {
     font-size: 12px;
     padding: 8px;
   }
-
   .main-image {
-    max-width: 300px;
+    max-width: 300px; /* Reduces further for very small screens */
     max-height: 180px;
   }
-
   .thumbnail-gallery img {
     width: 70px;
     height: 50px;
@@ -265,27 +207,18 @@
   .about-us {
     padding: 5px;
   }
-
-  .construction-container {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .why-choose-us h2,
   .about-us h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
-
   .dropdown-header {
     font-size: 10px;
     padding: 5px;
   }
-
   .main-image {
-    max-width: 280px;
-    max-height: 160px;
+    max-width: 280px; /* Caps for the smallest screen sizes */
+    max-height: 140px;
   }
-
   .thumbnail-gallery img {
     width: 60px;
     height: 40px;

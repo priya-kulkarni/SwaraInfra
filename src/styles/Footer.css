@@ -62,8 +62,5 @@
   }
   
   .footer-column ul li a:hover {
-    color: #FFBC13;
+    text-decoration: underline;
   }
-
-  
-  

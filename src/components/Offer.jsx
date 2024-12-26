@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React,{useEffect,useState} from "react";
 import "../styles/Offer.css";
 
 const AnimatedCounter = ({ endValue, duration }) => {
@@ -22,7 +22,6 @@ const AnimatedCounter = ({ endValue, duration }) => {
 
   return <h4>{count}+</h4>;
 };
-
 const Offer = () => {
   return (
     <div className="container">
@@ -47,7 +46,7 @@ const Offer = () => {
             />
             <h3>Design</h3>
             <p>
-              Our structural engineers ensure that the finalized design is structurally compatible as per the IS Standards. MEP engineers work on the electrical & plumbing line drawings suiting the client’s requirements and workability on site.
+            Our structural engineers ensure that the finalized design is structurally compatible as per the IS Standards. MEP engineers work on the electrical & plumbing line drawings suiting the client’s requirements and workability on site.
             </p>
           </div>
           <div className="card1">
@@ -60,20 +59,9 @@ const Offer = () => {
             A site engineer led by an experienced project coordinator works dedicatedly on site overseeing the process of home construction from day one till key handover.
             </p>
           </div>
-          <div className="card1">
-            <img
-              src="https://img.freepik.com/free-photo/high-angle-measuring-tools-still-life_23-2150440970.jpg?uid=R173554599&ga=GA1.1.1281800808.1725295084&semt=ais_hybrid"
-              alt="Design & Construction"
-            />
-            <h3>Key Handover</h3>
-            <p>
-            We ensure that the construction is completed within the agreed time frame and the key is handed over to the client along with a formal handover kit.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* AWESOME FACTS Section */}
       <section className="facts-section">
         <h2>The Construction Company</h2>
         <h3>AWESOME FACTS</h3>
@@ -95,5 +83,6 @@ const Offer = () => {
     </div>
   );
 };
+
 
 export default Offer;
