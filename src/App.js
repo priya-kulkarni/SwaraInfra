@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Premium from './components/Premium';
 import { Login, Register } from './components/Auth'; // Updated path for Login and Register components
 import BallCursor from "./components/Cursor";
+import Backtotop from "./components/Backtotop";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
@@ -23,6 +24,7 @@ const App = () => {
   return (
     <Router>
       <div>
+        <Backtotop/>
         <BallCursor/>
         <TopBar />
         <Navbar />
