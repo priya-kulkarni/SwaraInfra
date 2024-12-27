@@ -1,111 +1,80 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Auth.css'; // Ensure this CSS file exists and styles the component appropriately.
+import { useCookies } from 'react-cookie';
+import '../styles/Auth.css'; // Shared CSS for authentication
 
-const Auth = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isRegistering, setIsRegistering] = useState(false); // Toggle between login and register
+const Auth = ({ handleLogin }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [cookies, setCookie] = useCookies(['user']);
   const navigate = useNavigate();
 
+  // Check if user is already registered (stored in cookies)
   useEffect(() => {
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-      const [key, value] = cookie.trim().split('=');
-      acc[key] = value;
-      return acc;
-    }, {});
-
-    const user = cookies.user ? JSON.parse(cookies.user) : null;
-    if (user) {
-      setIsLoggedIn(true);
-      navigate('/projects'); // Redirect to projects if already logged in
+    if (cookies.user) {
+      try {
+        const storedUser = JSON.parse(cookies.user);
+        setName(storedUser.name || '');
+        setEmail(storedUser.email || '');
+      } catch (error) {
+        console.error("Error parsing cookies data:", error);
+      }
     }
-  }, [navigate]);
+  }, [cookies]);
 
-  const handleRegister = (e) => {
+  // Handle login (and registration, as we are using the same form for both)
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const password = btoa(e.target.password.value); // Base64 encoding (not secure for production)
 
+    // Save user data in cookies for next visit
     const userData = { name, email, password };
-    document.cookie = `user=${JSON.stringify(userData)}; path=/; max-age=${60 * 60 * 24 * 30}`; // Save cookie for 30 days
-    alert('Registration successful!');
-    setIsRegistering(false);
-  };
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = btoa(e.target.password.value); // Base64 encoding
-
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-      const [key, value] = cookie.trim().split('=');
-      acc[key] = value;
-      return acc;
-    }, {});
-
-    const user = cookies.user ? JSON.parse(cookies.user) : null;
-
-    if (user && user.email === email && user.password === password) {
-      alert('Login successful!');
-      setIsLoggedIn(true);
-      navigate('/projects'); // Redirect after login
-    } else {
-      alert('Invalid email or password');
+    try {
+      setCookie('user', JSON.stringify(userData), { path: '/' });
+    } catch (error) {
+      console.error("Error setting cookies:", error);
     }
-  };
 
-  const handleLogout = () => {
-    document.cookie = 'user=; path=/; max-age=0'; // Clear the cookie
-    setIsLoggedIn(false);
-    alert('Logged out successfully');
-    navigate('/'); // Redirect to home
+    handleLogin();
+    navigate('/');  // Redirect to home or any other page after login
   };
-
-  if (isLoggedIn) {
-    return (
-      <div className="unique-auth-container">
-        <h1 className="unique-auth-heading">Welcome Back!</h1>
-        <button className="unique-auth-button" onClick={handleLogout}>
-          Logout
-        </button>
-      </div>
-    );
-  }
 
   return (
     <div className="unique-auth-container">
-      {isRegistering ? (
-        <>
-          <h1 className="unique-auth-heading">Register</h1>
-          <form className="unique-auth-form" onSubmit={handleRegister}>
-            <label className="unique-auth-label">Name:</label>
-            <input className="unique-auth-input" type="text" name="name" required placeholder="Enter your name" />
-            <label className="unique-auth-label">Email:</label>
-            <input className="unique-auth-input" type="email" name="email" required placeholder="Enter your email" />
-            <label className="unique-auth-label">Password:</label>
-            <input className="unique-auth-input" type="password" name="password" required placeholder="Enter your password" />
-            <button className="unique-auth-button" type="submit">Register</button>
-          </form>
-          <p className="unique-auth-footer">
-            Already have an account? <span onClick={() => setIsRegistering(false)}>Login here</span>
-          </p>
-        </>
-      ) : (
-        <>
-          <h1 className="unique-auth-heading">Login</h1>
-          <form className="unique-auth-form" onSubmit={handleLogin}>
-            <label className="unique-auth-label">Email:</label>
-            <input className="unique-auth-input" type="email" name="email" required placeholder="Enter your email" />
-            <label className="unique-auth-label">Password:</label>
-            <input className="unique-auth-input" type="password" name="password" required placeholder="Enter your password" />
-            <button className="unique-auth-button" type="submit">Login</button>
-          </form>
-          <p className="unique-auth-footer">
-            Don't have an account? <span onClick={() => setIsRegistering(true)}>Register here</span>
-          </p>
-        </>
-      )}
+      <h1 className="unique-auth-heading">Login / Register</h1>
+      <form className="unique-auth-form" onSubmit={handleSubmit}>
+        <label className="unique-auth-label">Name:</label>
+        <input
+          className="unique-auth-input"
+          type="text"
+          required
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <label className="unique-auth-label">Email:</label>
+        <input
+          className="unique-auth-input"
+          type="email"
+          required
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label className="unique-auth-label">Phone No:</label>
+        <input
+          className="unique-auth-input"
+          type="no"
+          required
+          placeholder="Enter your phone no"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button className="unique-auth-button" type="submit">
+          Login / Register
+        </button>
+      </form>
     </div>
   );
 };

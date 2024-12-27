@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Cookies from 'js-cookie';
 import Home from './Pages/home';
 import Packages from './Pages/Packages';
 import About from './Pages/About';
@@ -10,23 +9,31 @@ import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Premium from './components/Premium';
-import Auth from './components/Auth'; // Import default exported component
+import Auth from './components/Auth'; // Updated import for the Auth component
 import BallCursor from "./components/Cursor";
 import Backtotop from "./components/Backtotop";
+import { useCookies } from 'react-cookie';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
+  const [cookies] = useCookies(['user']); // Get user data from cookies
 
-  useEffect(() => {
-    const token = Cookies.get('authToken'); // Retrieve token from cookies
-    if (token) {
-      setIsLoggedIn(true); // User is logged in if token exists
-    }
-  }, []);
-
+  // Handle login logic
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
+
+  // Check if user is already logged in via cookies
+  useEffect(() => {
+    if (cookies.user) {
+      try {
+        JSON.parse(cookies.user); // Try parsing cookies
+        setIsLoggedIn(true); // If successful, mark as logged in
+      } catch (error) {
+        console.error("Error parsing cookies data:", error);
+      }
+    }
+  }, [cookies]);
 
   return (
     <Router>
@@ -36,7 +43,8 @@ const App = () => {
         <TopBar />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* Route Definitions */}
+          <Route path="*" element={<Home />} />
           <Route path="/packages" element={<Packages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
@@ -46,14 +54,14 @@ const App = () => {
               isLoggedIn ? (
                 <Projects />
               ) : (
-                <Navigate to="/auth" state={{ from: '/projects' }} />
+                <Navigate to="/login" state={{ from: '/projects' }} />
               )
             }
           />
           <Route path="/premium" element={<Premium />} />
           <Route
-            path="/auth"
-            element={<Auth />}
+            path="/login"
+            element={<Auth handleLogin={handleLogin} />}
           />
         </Routes>
         <Footer />
