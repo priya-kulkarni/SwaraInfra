@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import Home from './Pages/home';
 import Packages from './Pages/Packages';
 import About from './Pages/About';
@@ -9,14 +10,20 @@ import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Premium from './components/Premium';
-import { Login, Register } from './components/Auth'; // Updated path for Login and Register components
+import Auth from './components/Auth'; // Import default exported component
 import BallCursor from "./components/Cursor";
 import Backtotop from "./components/Backtotop";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Handle login logic
+  useEffect(() => {
+    const token = Cookies.get('authToken'); // Retrieve token from cookies
+    if (token) {
+      setIsLoggedIn(true); // User is logged in if token exists
+    }
+  }, []);
+
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
@@ -24,13 +31,12 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Backtotop/>
-        <BallCursor/>
+        <Backtotop />
+        <BallCursor />
         <TopBar />
         <Navbar />
         <Routes>
-          {/* Route Definitions */}
-          <Route path="*" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/packages" element={<Packages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
@@ -40,18 +46,14 @@ const App = () => {
               isLoggedIn ? (
                 <Projects />
               ) : (
-                <Navigate to="/login" state={{ from: '/projects' }} />
+                <Navigate to="/auth" state={{ from: '/projects' }} />
               )
             }
           />
           <Route path="/premium" element={<Premium />} />
           <Route
-            path="/login"
-            element={<Login handleLogin={handleLogin} />}
-          />
-          <Route
-            path="/register"
-            element={<Register />}
+            path="/auth"
+            element={<Auth />}
           />
         </Routes>
         <Footer />

@@ -1,85 +1,58 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/AboutUs.css";
-
-// Import Images (Ensure these paths are correct)
 import vision from "../assets/vision.jpg";
 import mission from "../assets/mission.jpg";
 import featuring from "../assets/featuring.jpg";
 
-const AboutUs = () => {
+const App = () => {
+  const cards = [
+    {
+      id: 1,
+      title: "Mission",
+      description:
+        "Building Your Dream Home with Thikedaar.Com: From Blueprint to Reality. Thikedaar.Com offers a comprehensive home construction service that begins with your dream...",
+      image: vision, // Directly assign the imported image variable
+    },
+    {
+      id: 2,
+      title: "Vision",
+      description:
+        "Transforming Business Environments with Thikedaar.Com: Tailored Commercial Spaces for Success. Thikedaar.Com understands that the design and construction of commercial spaces...",
+      image: mission, // Directly assign the imported image variable
+    },
+    {
+      id: 3,
+      title: "Featuring",
+      description:
+        "Empowering Industries with Thikedaar.Com: Robust Construction Solutions. Thikedaar.Com provides tailored industrial construction services for efficient and functional spaces...",
+      image: featuring, // Directly assign the imported image variable
+    },
+  ];
+
   return (
-    <div className="about-us-section py-5">
-      <div className="container">
-        {/* Section Title */}
-        <div className="text-center mb-5">
-          <h2>About Us</h2>
-          <p className="text-muted">
-            Swarainfra turns that dream into reality. We're your one-stop shop
-            for everything home construction. From expert civil engineers to a
-            team that oversees every detail, we handle it all.
-          </p>
-        </div>
-
-        {/* Card 1 */}
-        <div className="card mb-5 shadow-sm">
-          <div className="row no-gutters align-items-center">
-            <div className="col-md-6">
-              <img src={mission} alt="Mission" className="img-fluid fixed-image" />
-            </div>
-            <div className="col-md-6 p-4">
-              <h3>Our Mission</h3>
-              <p>
-                We believe that just growing bigger isn’t growing better.
-                Growing better means building a company and culture that endure
-                and scale to meet the needs of our customers for years to come.
-              </p>
-            </div>
+    <div className="container">
+      {cards.map((card, index) => (
+        <div
+          className={`card ${index % 2 === 0 ? "card-left" : "card-right"}`}
+          key={card.id}
+        >
+          {index % 2 === 0 && (
+            <img src={card.image} alt={card.title} className="card-image" />
+          )}
+          <div className="card-content">
+            <h1 className="card-number">0{card.id}</h1>
+            <h2>{card.title}</h2>
+            <div className="yellow-line"></div>
+            <p>{card.description}</p>
+            
           </div>
+          {index % 2 !== 0 && (
+            <img src={card.image} alt={card.title} className="card-image" />
+          )}
         </div>
-
-        {/* Card 2 */}
-        <div className="card mb-5 shadow-sm">
-          <div className="row no-gutters align-items-center flex-row-reverse">
-            <div className="col-md-6">
-              <img src={vision} alt="Vision" className="img-fluid fixed-image" />
-            </div>
-            <div className="col-md-6 p-4">
-              <h3>Our Vision</h3>
-              <p>
-                Our vision at Swara Infra is to be recognized as the premier
-                construction company, setting the standard for excellence in the
-                industry. We envision a future where our innovative solutions,
-                sustainable practices, and unwavering commitment to quality
-                propel us to the forefront of construction innovation.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Card 3 */}
-        <div className="card mb-5 shadow-sm">
-          <div className="row no-gutters align-items-center">
-            <div className="col-md-6">
-              <img
-                src={featuring}
-                alt="Featuring"
-                className="img-fluid fixed-image"
-              />
-            </div>
-            <div className="col-md-6 p-4">
-              <h3>Featuring</h3>
-              <p>
-                New & Trending Designs, No Subcontracts, No Hidden Charges,
-                Timely Delivery, Fair Pricing, High-quality work with No
-                Compromise.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
 
-export default AboutUs;
+export default App;

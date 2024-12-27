@@ -4,7 +4,7 @@ import AboutUs from "../components/AboutUs";
 import ProgressBar from "../components/ProgressBar";
 import ServicesBanner from "../components/ServicesBanner";
 import TeamSection from "../components/TeamSection";
-import PromoSection from "../components/Promosection";
+// import PromoSection from "../components/Promosection";
 
 
 
@@ -15,7 +15,7 @@ function About() {
       <AboutUs/>
       <ProgressBar/>
       <ServicesBanner/>
-      <PromoSection/>
+      {/* <PromoSection/> */}
       <TeamSection/>
     </div>
   );
