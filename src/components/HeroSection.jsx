@@ -46,7 +46,7 @@ function HeroSection() {
         <div className="carousel-inner">
           <div className="carousel-item active" data-aos="fade-up">
             <img
-              src="https://themes247.net/html5/construction-template/demo/assets/img/slider/3.jpg"
+              src="https://themes247.net/html5/construction-template/demo/assets/img/slider/8.jpg"
               className="d-block w-100"
               alt="Slide 1"
             />

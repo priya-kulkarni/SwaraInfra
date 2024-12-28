@@ -37,11 +37,15 @@
   margin-top: 0.5rem;
 }
 
-.container {
+.container1 {
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  background-image: url(https://cdn.prod.website-files.com/61c1fed84b29a841427d2d59/66d73e2c1b8381ca608aa73c_case%20study%20shapes.svg);
+  background-size: cover;
+  background-position: center;
 }
 
 .card {

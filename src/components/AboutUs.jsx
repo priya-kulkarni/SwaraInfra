@@ -59,7 +59,7 @@ const App = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="container">
+      <div className="container1">
         {cards.map((card, index) => (
           <div className="card-wrapper" key={card.id}>
             <div

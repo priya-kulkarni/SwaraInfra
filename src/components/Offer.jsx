@@ -60,7 +60,7 @@ const Offer = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container2">
       {/* WHAT WE OFFER Section */}
       <section className="offer-section" data-aos="fade-up">
         <h2>WHAT WE OFFER</h2>

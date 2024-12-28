@@ -49,6 +49,8 @@ const TeamSection = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    nextArrow: <button className="slick-next">Next</button>,  // Custom Next button
+    prevArrow: <button className="slick-prev">Previous</button>,  // Custom Prev button
     responsive: [
       {
         breakpoint: 1024,
