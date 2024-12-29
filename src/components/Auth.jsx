@@ -42,7 +42,7 @@ const Auth = ({ handleLogin }) => {
 
   return (
     <div className="unique-auth-container">
-      <h1 className="unique-auth-heading">Login / Register</h1>
+      <h1 className="unique-auth-heading">Subscribe</h1>
       <form className="unique-auth-form" onSubmit={handleSubmit}>
         <label className="unique-auth-label">Name:</label>
         <input
@@ -72,7 +72,7 @@ const Auth = ({ handleLogin }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="unique-auth-button" type="submit">
-          Login / Register
+          Subscribe
         </button>
       </form>
     </div>
