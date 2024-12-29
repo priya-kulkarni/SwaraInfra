@@ -1,12 +1,16 @@
 .offer-section {
   text-align: center;
-  padding: 60px 80px;
+  padding: 20px 60px;
   position: relative;
   background-image: url(file:///C:/Users/Dell-Pc/Pictures/Texture4.svg);
   background-size: cover;
   background-position: center;
 }
 
+.offer-section h2{
+  font-family: lilita one;
+  font-size: 40px;
+}
 .offer-title {
   font-size: 2rem;
   color: #4B0082;
@@ -105,22 +109,129 @@
 }
 
 @media (max-width: 768px) {
-  .cards {
-      flex-direction: column;
-      align-items: center;
+  .offer-section h2{
+    font-size: 40px;
   }
-
-  .card1 {
-      width: 80%; 
-      margin-bottom: 20px;
-  }
-
   .facts {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .fact {
-      width: 80%; 
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .offer-carousel .offer-member {
+    margin: 10px 0;
+  }
+
+  .offer-title {
+    font-size: 1.8rem;
+  }
+
+  .offer-member-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 425px) {
+  .offer-section h2{
+    font-size: 30px;
+  }
+  .facts-section h2 {
+    font-size: 24px;
+  }
+
+  .facts-section h3 {
+    font-size: 18px;
+  }
+
+  .fact h4 {
+    font-size: 22px;
+  }
+
+  .offer-member-name {
+    font-size: 1.3rem;
+  }
+
+  .offer-member-role {
+    font-size: 0.8rem;
+  }
+
+  .offer-carousel .offer-member {
+    padding: 8px;
+  }
+
+  .offer-member-image {
+    height: 240px;
+  }
+}
+
+@media (max-width: 375px) {
+  .offer-section h2{
+    font-size: 25px;
+  }
+  .facts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fact {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .offer-section {
+    padding: 20px 10px;
+  }
+
+  .offer-title {
+    font-size: 1.6rem;
+  }
+
+  .offer-member-name {
+    font-size: 1.2rem;
+  }
+
+  .offer-member-role {
+    font-size: 0.7rem;
+  }
+
+  .offer-member-image {
+    height: 240px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .offer-section h2{
+    font-size: 20px;
+  }
+  .facts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fact {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .offer-title {
+    font-size: 1.4rem;
+  }
+
+  .offer-member-name {
+    font-size: 1rem;
+  }
+
+  .offer-member-role {
+    font-size: 0.6rem;
+  }
+
+  .offer-member-image {
+    height: 240px;
+    width: 100%;
   }
 }

@@ -44,7 +44,7 @@ const teamMembers = [
 
 const TeamSection = () => {
   const settings = {
-    // dots: true,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
