@@ -30,13 +30,13 @@ const teamMembers = [
 const TeamSection = () => {
   const factsSectionRef = useRef(null); // Reference for the facts section
   const settings = {
-    // dots: true,
+    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <button className="slick-next">Next</button>,
-    prevArrow: <button className="slick-prev">Previous</button>,
+    nextArrow: <button className="slick-next1">Next</button>,
+    prevArrow: <button className="slick-prev2">Previous</button>,
     responsive: [
       {
         breakpoint: 1024,
