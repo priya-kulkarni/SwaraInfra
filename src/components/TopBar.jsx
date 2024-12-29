@@ -15,9 +15,10 @@ const TopBar = () => {
           </div>
         <div className="contact-info">
           
-          <span>📞 +1 718-999-3939</span>
-          <span>✉ contact@construction.com</span>
-          <span>🕖 Mon-Fri: 7:00 - 7:00</span>        </div>
+          <span>📞 +91 9538675322</span>
+          <span>✉ Swarainfra1@gmail .com</span>
+          <span>🕖 Mon-Fri: 7:00Am - 7:00Pm</span>        
+          </div>
     </div>
   );
 };
