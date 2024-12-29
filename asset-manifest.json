@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SwaraInfra/static/css/main.bcb49993.css",
-    "main.js": "/SwaraInfra/static/js/main.c1155fff.js",
+    "main.css": "/SwaraInfra/static/css/main.b1285fc2.css",
+    "main.js": "/SwaraInfra/static/js/main.60f85d96.js",
     "static/js/453.0aefb1aa.chunk.js": "/SwaraInfra/static/js/453.0aefb1aa.chunk.js",
     "static/media/Loginbg.jpg": "/SwaraInfra/static/media/Loginbg.5c2b6335b53b6933695d.jpg",
     "static/media/mission.jpg": "/SwaraInfra/static/media/mission.87b6083ff3199f2ff435.jpg",
@@ -17,12 +17,12 @@
     "static/media/slick.woff": "/SwaraInfra/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/SwaraInfra/index.html",
     "static/media/Texture4.svg": "/SwaraInfra/static/media/Texture4.4da88fc88e616b3da18c.svg",
-    "main.bcb49993.css.map": "/SwaraInfra/static/css/main.bcb49993.css.map",
-    "main.c1155fff.js.map": "/SwaraInfra/static/js/main.c1155fff.js.map",
+    "main.b1285fc2.css.map": "/SwaraInfra/static/css/main.b1285fc2.css.map",
+    "main.60f85d96.js.map": "/SwaraInfra/static/js/main.60f85d96.js.map",
     "453.0aefb1aa.chunk.js.map": "/SwaraInfra/static/js/453.0aefb1aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bcb49993.css",
-    "static/js/main.c1155fff.js"
+    "static/css/main.b1285fc2.css",
+    "static/js/main.60f85d96.js"
   ]
 }
