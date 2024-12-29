@@ -13,10 +13,9 @@
 }
 
 .image-placeholder {
-  width: 100%;
+  width: 80%;
   height: 300px;
   margin-bottom: 20px;
-  margin-left: 50px;
 }
 
 .content {
