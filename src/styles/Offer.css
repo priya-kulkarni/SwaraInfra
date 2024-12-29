@@ -169,6 +169,9 @@
 }
 
 @media (max-width: 375px) {
+  .offer-section{
+    width: 90%;
+  }
   .offer-section h2{
     font-size: 25px;
   }
@@ -205,6 +208,9 @@
 }
 
 @media (max-width: 320px) {
+  .offer-section{
+    width: 90%;
+  }
   .offer-section h2{
     font-size: 20px;
   }
