@@ -1,6 +1,6 @@
 .card4-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
   margin-bottom: 50px;
 }
@@ -52,9 +52,9 @@
 }
 
 .card4-image {
-  width: 180px;
+  width: 120px;
   border-radius: 20px;
-  height: 140px;
+  height: auto;
   transition: transform 0.3s ease; 
 }
 
@@ -88,49 +88,10 @@
   color: #333; 
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .card4-container {
     grid-template-columns: 1fr 1fr; 
     gap: 30px;
     font-size: 20px;
-  }
-}
-
-@media (max-width: 425px) {
-  .main-services-container h2 {
-   font-size: 30px;
-  }
-  .card4-container {
-    grid-template-columns: 1fr; 
-    gap: 30px;
-    font-size: 20px;
-  }
-  .card4 {
-    flex-direction: column; /* Stack image and text vertically */
-    text-align: center; /* Center-align content for smaller screens */
-  }
-
-  .card4-content {
-    flex-direction: column; /* Ensure vertical stacking */
-    align-items: center; 
-  }
-
-  .card4-image {
-    width: 80%;
-    height: auto; /* Adjust height for responsive display */
-    margin-bottom: 15px; /* Add spacing below the image */
-  }
-
-  .card4-text {
-    max-width: 100%; /* Full-width text on smaller screens */
-    padding: 0 10px; /* Add padding for better readability */
-  }
-
-  .card4-text h3 {
-    font-size: 18px; /* Adjust heading size for smaller screens */
-  }
-
-  .card4-text p {
-    font-size: 14px; /* Adjust paragraph size for smaller screens */
   }
 }
