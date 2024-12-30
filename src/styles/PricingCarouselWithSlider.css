@@ -6,7 +6,7 @@
   background: none;
   margin-top: 110px;
   position: relative;
-  background-image: url(https://www.supersonicplayground.com/wp-content/themes/supersonicplayground/img/backgrounds/blue-parallax-left-bottom.svg);
+  background-image: url('../assets/Pricingbg.svg');
   background-size: cover;
   background-position: center;
 }
