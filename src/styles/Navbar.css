@@ -105,6 +105,8 @@
 
   .custom-nav-links.custom-active {
     display: flex;
+    gap: 30px;
+    text-align: center;
   }
 
   .custom-nav-links a {
@@ -141,4 +143,9 @@
     flex-direction: row;
     align-items: flex-start;
   }
+}
+.custom-nav-links.custom-active {
+  display: flex;
+  gap: 20px;
+  text-align: center;
 }
