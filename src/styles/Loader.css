@@ -1,0 +1,55 @@
+.skeleton-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+  }
+  
+  .skeleton-image {
+    width: 100%;
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-text {
+    width: 80%;
+    margin-top: 10px;
+  }
+  
+  .skeleton-title,
+  .skeleton-description {
+    background-color: #e0e0e0;
+    margin: 8px 0;
+    border-radius: 5px;
+  }
+  
+  .skeleton-title {
+    width: 70%;
+    height: 20px;
+  }
+  
+  .skeleton-description {
+    width: 50%;
+    height: 15px;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+  

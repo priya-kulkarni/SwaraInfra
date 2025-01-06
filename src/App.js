@@ -13,6 +13,7 @@ import Auth from './components/Auth';
 import BallCursor from "./components/Cursor";
 import Backtotop from "./components/Backtotop";
 import { useCookies } from 'react-cookie';
+import WhatsAppButton from './components/Whattsapp';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
@@ -38,6 +39,7 @@ const App = () => {
   return (
     <Router>
       <div>
+        <WhatsAppButton/>
         <Backtotop />
         <BallCursor />
         <TopBar />
