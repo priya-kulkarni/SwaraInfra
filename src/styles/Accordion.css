@@ -5,6 +5,7 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   overflow: hidden;
+  scroll-behavior: smooth; /* Enables smooth scrolling for the accordion */
 }
 
 .accordion-heading {
@@ -17,6 +18,7 @@
 
 .accordion-item {
   border-bottom: 1px solid #ddd;
+  scroll-margin-top: 80px; /* Adjust this value based on your header height or spacing */
 }
 
 .accordion-title {
@@ -46,22 +48,20 @@
   font-size: 14px;
   line-height: 1.8;
   border-top: 1px solid #ddd;
-  font-family:Geologica;
-  
+  font-family: Geologica;
 }
 
 .accordion-content p {
   margin: 0;
   font-size: 14px;
-  font-family:Geologica;
+  font-family: Geologica;
   color: #555;
 }
 
 .accordion-title span {
   font-size: 18px;
-  font-family:Geologica;
+  font-family: Geologica;
 }
-
 
 @media (max-width: 320px) {
   .accordion {
