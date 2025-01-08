@@ -7,22 +7,22 @@ import "aos/dist/aos.css";
 const teamMembers = [
   {
     name: "Architecture",
-    role: "Experienced Architects to work on the floor plans, elevation and working drawings which are completely vastu oriented.",
+    role: " Experienced architects ensure vastu-oriented floor plans, elevation designs, and working drawings are functional, aesthetically pleasing, and tailored to client preferences.",
     image: "https://www.housespace.in/img/sections/services/building-contruction.jpg",
   },
   {
     name: "Design",
-    role: "Our structural engineers ensure that the finalized design is structurally compatible as per the IS Standards. MEP engineers work on the electrical & plumbing line drawings suiting the client’s requirements and workability on site.",
+    role: "Structural engineers ensure designs meet IS Standards, while MEP engineers craft electrical and plumbing line drawings customized to suit the client’s needs.",
     image: "https://st4.depositphotos.com/1007034/40271/i/450/depositphotos_402718606-stock-photo-architecture-project-showing-different-design.jpg",
   },
   {
     name: "Construction",
-    role: "A site engineer led by an experienced project coordinator works dedicatedly on site overseeing the process of home construction from day one till key handover.",
+    role: "  A site engineer, guided by an experienced project coordinator, manages on-site construction from the foundation stage to key handover.",
     image: "https://img.freepik.com/free-photo/high-angle-measuring-tools-still-life_23-2150440970.jpg?uid=R173554599&ga=GA1.1.1281800808.1725295084&semt=ais_hybrid",
   },
   {
     name: "Key Handover",
-    role: "We ensure that the construction is completed within the agreed time frame and the key is handed over to the client along with a formal handover kit.",
+    role: " Construction is completed within the agreed timeline, and the client receives the keys along with a formal handover kit, ensuring a smooth transition to their new home.",
     image: "https://thumbs.dreamstime.com/b/key-handover-scene-where-real-estate-agent-landlord-hands-over-keys-to-new-house-owner-tenant-property-investor-292194499.jpg",
   },
 ];
