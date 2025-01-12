@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/SwaraInfra/static/css/main.5cec0a65.css",
-    "main.js": "/SwaraInfra/static/js/main.be470606.js",
+    "main.css": "/SwaraInfra/static/css/main.f2bc4342.css",
+    "main.js": "/SwaraInfra/static/js/main.f3fc697a.js",
     "static/js/453.bc771d22.chunk.js": "/SwaraInfra/static/js/453.bc771d22.chunk.js",
+    "static/media/hero1.mp4": "/SwaraInfra/static/media/hero1.de8c28898865126d6d93.mp4",
+    "static/media/hero2.mp4": "/SwaraInfra/static/media/hero2.9a1be958266d71f6c41f.mp4",
     "static/media/ongoing2.jpg": "/SwaraInfra/static/media/ongoing2.ba481b1a266d9f4eedeb.jpg",
     "static/media/ongoing1.jpg": "/SwaraInfra/static/media/ongoing1.a5bf5458f46c6149a908.jpg",
     "static/media/completed8.jpg": "/SwaraInfra/static/media/completed8.f13717880fe76ba3046a.jpg",
@@ -13,6 +15,7 @@
     "static/media/Loginbg.jpg": "/SwaraInfra/static/media/Loginbg.5c2b6335b53b6933695d.jpg",
     "static/media/completed9.jpg": "/SwaraInfra/static/media/completed9.0f0027c282646a965698.jpg",
     "static/media/completed11.jpg": "/SwaraInfra/static/media/completed11.9b2dcb5e821ec5140e41.jpg",
+    "static/media/hero3.mp4": "/SwaraInfra/static/media/hero3.d74b6eddd31abdba7993.mp4",
     "static/media/mission.jpg": "/SwaraInfra/static/media/mission.87b6083ff3199f2ff435.jpg",
     "static/media/completed3.jpg": "/SwaraInfra/static/media/completed3.8d6104cd7a49823d229f.jpg",
     "static/media/featuring.jpg": "/SwaraInfra/static/media/featuring.a3b9a1333aac25a9b471.jpg",
@@ -39,12 +42,12 @@
     "static/media/slick.woff": "/SwaraInfra/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/SwaraInfra/index.html",
     "static/media/Pricingbg.svg": "/SwaraInfra/static/media/Pricingbg.4da88fc88e616b3da18c.svg",
-    "main.5cec0a65.css.map": "/SwaraInfra/static/css/main.5cec0a65.css.map",
-    "main.be470606.js.map": "/SwaraInfra/static/js/main.be470606.js.map",
+    "main.f2bc4342.css.map": "/SwaraInfra/static/css/main.f2bc4342.css.map",
+    "main.f3fc697a.js.map": "/SwaraInfra/static/js/main.f3fc697a.js.map",
     "453.bc771d22.chunk.js.map": "/SwaraInfra/static/js/453.bc771d22.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5cec0a65.css",
-    "static/js/main.be470606.js"
+    "static/css/main.f2bc4342.css",
+    "static/js/main.f3fc697a.js"
   ]
 }
