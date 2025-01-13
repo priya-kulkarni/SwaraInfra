@@ -1,174 +1,221 @@
+/* General Styles */
 .hero-section {
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  z-index: 1;
-  margin-top: 100px;
-}
-
-.carousel {
-  height: 100%;
-}
-
-.carousel-inner {
-  height: 100%;
-}
-
-.carousel-item {
-  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 50px;
+  background-color: #f9f9f9;
+  margin-top: 120px;
+  position: relative;
+  background-color: rgb(252, 232, 232);
+  background-image: url('https://html.rrdevs.net/ribuild/assets/imgs/request-quote/request-quote.png');
+  background-size: cover;
+  background-position: center;
 }
 
-.carousel-item video {
-  object-fit: cover; /* Ensures the image maintains proportions and fills space */
-  width: 100%; /* Full width for responsiveness */
-  height: 100%; /* Full height for responsiveness */
-  filter: brightness(95%) contrast(105%); /* Enhances visual clarity */
-  border-radius: 5px; /* Modern subtle edge styling */
+.content {
+  max-width: 50%;
+  margin-left: 50px;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1.5s ease-in-out forwards; /* Fade-in animation */
 }
 
-.carousel-item img {
-  object-fit: cover; /* Ensures the image maintains proportions and fills space */
-  width: 100%; /* Full width for responsiveness */
-  height: 100%; /* Full height for responsiveness */
-  filter: brightness(95%) contrast(105%); /* Enhances visual clarity */
-  border-radius: 5px; /* Modern subtle edge styling */
-}
-
-.carousel-caption {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translateX(-50%,-50%);
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); 
-  z-index: 10;
-  transform-origin: 50% 50% 0px;
-  line-height: 40px;
-}
-
-.carousel-caption h5 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.carousel-caption p {
-  font-size: 1.2rem;
+.content h1 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  max-width: 800px;
-  line-height: 1.5;
-  margin: 0 auto;
-}
-
-.carousel-caption .btn {
-  background-color: #ffc107;
   color: black;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s ease-in-out 1s forwards; /* Fade-in animation with delay */
 }
 
-.carousel-caption .btn:hover {
-  background-color: #e6a600;
-  color: white;
+.content p {
+  color: black;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s ease-in-out 1.5s forwards; /* Fade-in animation with delay */
 }
 
-.carousel-indicators button {
-  width: 12px;
-  height: 12px;
+.images {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInImages 1.5s ease-in-out 2s forwards; /* Fade-in animation for images */
+}
+
+.images .main-image {
+  width: 410px;
+  height: 444px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transform: translateY(20px); /* Start with a slight downward shift */
+  opacity: 0; /* Initially hidden */
+  animation: slideUp 1s ease-out 2s forwards; /* Slide-up animation for main image */
+}
+
+.images .main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.images .secondary-image {
+  width: 310px;
+  height: 310px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
+  overflow: hidden;
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  border: 6px solid #fff; /* Adjust as needed */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transform: scale(0.8); /* Start smaller */
+  opacity: 0; /* Initially hidden */
+  animation: zoomIn 1s ease-out 2.5s forwards; /* Zoom-in animation for secondary image */
 }
 
-.carousel-indicators .active {
-  background-color: #ffc107;
+.images .secondary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-/* Responsive Adjustments */
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for images fading in */
+@keyframes fadeInImages {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Slide-up animation for main image */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zoom-in animation for secondary image */
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Styles */
+
+/* For screens smaller than 768px */
 @media (max-width: 768px) {
-  .hero-section{
-    margin-top: 150px;
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
   }
-  .carousel-caption {
-    bottom: 45%; /* Adjusted position for medium screens */
+
+  .content {
+    max-width: 100%;
   }
-  .carousel-caption h5 {
-    font-size: 2.5rem;
-  }
-  .carousel-caption p {
-    font-size: 1.1rem;
-  }
-  .carousel-caption .btn {
-    font-size: 0.9rem;
-    padding: 10px 20px;
+
+  .images {
+    justify-content: center;
   }
 }
 
+/* For screens smaller than 435px */
 @media (max-width: 425px) {
   .hero-section {
-    height: 80vh;
-    margin-top: 180px;
+    padding: 30px;
+    margin-top: 80px;
   }
-  .carousel-caption {
-    bottom: 30%; 
+
+  .content {
+    max-width: 100%;
+    margin-left: 0;
+    padding: 10px;
   }
-  .carousel-caption h5 {
-    font-size: 1.5rem;
+
+  .content h1 {
+    font-size: 2rem;
   }
-  .carousel-caption p {
-    font-size: 0.5rem;
+
+  .content p {
+    font-size: 0.9rem;
   }
-  .carousel-caption .btn {
-    font-size: 0.85rem;
-    padding: 8px 16px;
+
+  .images .main-image {
+    width: 250px; /* Adjust size */
+    height: 275px; /* Adjust size */
+  }
+
+  .images .secondary-image {
+    width: 200px;
+    height: 200px;
+    bottom: -40px;
+    left: -40px;
   }
 }
 
-@media (max-width: 375px) {
-  .hero-section {
-    height: 75vh;
-    margin-top: 180px;
-  }
-  .carousel-caption {
-    bottom: 20%; 
-  }
-  .carousel-caption h5 {
-    font-size: 1.0rem;
-  }
-  .carousel-caption p {
-    font-size: 0.3rem;
-  }
-  .carousel-caption .btn {
-    font-size: 0.8rem;
-    padding: 6px 14px;
-  }
-}
-
+/* For screens smaller than 320px */
 @media (max-width: 320px) {
   .hero-section {
-    height: 70vh;
-    margin-top: 180px;
+    padding: 20px;
+    margin-top: 90px;
   }
-  .carousel-caption {
-    bottom: 30%; /* Adjusted position for extra small screens */
+
+  .content h1 {
+    font-size: 1.5rem;
   }
-  .carousel-caption h5 {
-    font-size: 0.5rem;
+
+  .content p {
+    font-size: 0.85rem;
   }
-  .carousel-caption p {
-    font-size: 0.1rem;
+
+  .images .main-image {
+    width: 220px; /* Adjust size */
+    height: 240px; /* Adjust size */
   }
-  .carousel-caption .btn {
-    font-size: 0.7rem;
-    padding: 5px 12px;
+
+  .images .secondary-image {
+    width: 180px;
+    height: 180px;
+    bottom: -30px;
+    left: -30px;
   }
 }
