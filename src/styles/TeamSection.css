@@ -54,12 +54,12 @@
   font-family: Arial, sans-serif;
 }
 
-img {
+/* img {
   -webkit-transform: none; 
   -moz-transform: none;
   transform: none;
   image-rendering: auto; 
-}
+} */
 
 @media(max-width:768px){
   .team-title{

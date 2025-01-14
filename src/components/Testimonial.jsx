@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Testimonial.css";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS CSS
+import "aos/dist/aos.css"; 
+
 
 const PartnersTestimonials = () => {
   const [testimonialIndex, setTestimonialIndex] = useState(0);

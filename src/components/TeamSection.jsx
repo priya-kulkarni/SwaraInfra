@@ -3,6 +3,9 @@ import Slider from "react-slick";
 import "../styles/TeamSection.css";
 import AOS from "aos";  // Import AOS
 import "aos/dist/aos.css";  // Import AOS styles
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 
 const teamMembers = [
   {
