@@ -1,0 +1,55 @@
+/* Light Theme (Default) */
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body.light header,
+  body.light footer {
+    background-color: #f8f9fa;
+    color: #000000;
+  }
+  
+  body.light a {
+    color: #007bff;
+  }
+  
+  /* Dark Theme */
+  body.dark {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark header,
+  body.dark footer {
+    background-color: #212121;
+    color: #ffffff;
+  }
+  
+  body.dark a {
+    color: #80d8ff;
+  }
+  
+  /* Theme Toggle Button Styling */
+  .theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  .theme-toggle button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  body.dark .theme-toggle button {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
