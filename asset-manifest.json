@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SwaraInfra/static/css/main.737ab8c5.css",
-    "main.js": "/SwaraInfra/static/js/main.9a34fa02.js",
+    "main.css": "/SwaraInfra/static/css/main.45329f62.css",
+    "main.js": "/SwaraInfra/static/js/main.e2ce94d5.js",
     "static/js/453.bc771d22.chunk.js": "/SwaraInfra/static/js/453.bc771d22.chunk.js",
     "static/media/ongoing2.jpg": "/SwaraInfra/static/media/ongoing2.ba481b1a266d9f4eedeb.jpg",
     "static/media/ongoing1.jpg": "/SwaraInfra/static/media/ongoing1.a5bf5458f46c6149a908.jpg",
@@ -10,7 +10,6 @@
     "static/media/completed6.jpg": "/SwaraInfra/static/media/completed6.943f713bec8e6bf49730.jpg",
     "static/media/completed1.jpg": "/SwaraInfra/static/media/completed1.0643917fdc2ffdc61513.jpg",
     "static/media/completed10.jpg": "/SwaraInfra/static/media/completed10.7ee14a722b008090bf5e.jpg",
-    "static/media/Loginbg.jpg": "/SwaraInfra/static/media/Loginbg.5c2b6335b53b6933695d.jpg",
     "static/media/completed9.jpg": "/SwaraInfra/static/media/completed9.0f0027c282646a965698.jpg",
     "static/media/completed11.jpg": "/SwaraInfra/static/media/completed11.9b2dcb5e821ec5140e41.jpg",
     "static/media/mission.jpg": "/SwaraInfra/static/media/mission.87b6083ff3199f2ff435.jpg",
@@ -37,12 +36,12 @@
     "static/media/slick.woff": "/SwaraInfra/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/SwaraInfra/index.html",
     "static/media/Pricingbg.svg": "/SwaraInfra/static/media/Pricingbg.4da88fc88e616b3da18c.svg",
-    "main.737ab8c5.css.map": "/SwaraInfra/static/css/main.737ab8c5.css.map",
-    "main.9a34fa02.js.map": "/SwaraInfra/static/js/main.9a34fa02.js.map",
+    "main.45329f62.css.map": "/SwaraInfra/static/css/main.45329f62.css.map",
+    "main.e2ce94d5.js.map": "/SwaraInfra/static/js/main.e2ce94d5.js.map",
     "453.bc771d22.chunk.js.map": "/SwaraInfra/static/js/453.bc771d22.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.737ab8c5.css",
-    "static/js/main.9a34fa02.js"
+    "static/css/main.45329f62.css",
+    "static/js/main.e2ce94d5.js"
   ]
 }
