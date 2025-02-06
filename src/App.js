@@ -10,10 +10,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Premium from './components/Premium';
 import Auth from './components/Auth'; 
-import BallCursor from "./components/Cursor";
+// import BallCursor from "./components/Cursor";
 import Backtotop from "./components/Backtotop";
 import { useCookies } from 'react-cookie';
 import WhatsAppButton from './components/Whattsapp';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
@@ -38,10 +39,11 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop/>
       <div>
         <WhatsAppButton/>
         <Backtotop />
-        <BallCursor />
+        {/* <BallCursor /> */}
         <TopBar />
         <Navbar />
         <Routes>
