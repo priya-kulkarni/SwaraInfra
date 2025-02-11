@@ -222,3 +222,21 @@
     left: -30px;
   }
 }
+
+.hero-section.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.hero-section.dark .carousel-content h1 {
+  color: #f8f9fa;
+}
+
+.hero-section.dark .carousel-content p {
+  color: #d1d1d1;
+}
+
+.hero-section.dark .carousel-control-prev-icon,
+.hero-section.dark .carousel-control-next-icon {
+  filter: invert(1);
+}

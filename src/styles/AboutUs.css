@@ -153,3 +153,32 @@
   align-items: center;
   margin-bottom: 20px; 
 }
+
+.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-theme .header {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark-theme .card {
+  background: #1e1e1e;
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .card h2,
+.dark-theme .card p {
+  color: #f0f0f0;
+}
+
+.dark-theme .yellow-line {
+  background-color: #ffa500;
+}
+
+.dark-theme .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}

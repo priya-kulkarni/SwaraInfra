@@ -1,16 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "../styles/AboutUs.css";
 import vision from "../assets/vision.jpg";
 import mission from "../assets/mission.jpg";
 import featuring from "../assets/featuring.jpg";
-import headerBg from "../assets/header-bg.png"; 
-import AOS from "aos";  
-import "aos/dist/aos.css";  
+import headerBg from "../assets/header-bg.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { ThemeContext } from "../components/ThemeContext";
+
 const App = () => {
+  const { theme } = useContext(ThemeContext);
+
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
-      once: true, 
+      duration: 1000,
+      once: true,
     });
   }, []);
 
@@ -39,14 +43,14 @@ const App = () => {
   ];
 
   return (
-    <>
+    <div className={`app-container ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
       {/* Header Section */}
       <div
-        className="header"
+        className={`header ${theme === "dark" ? "dark-theme" : "light-theme"}`}
         style={{
           backgroundImage: `url(${headerBg})`,
         }}
-        data-aos="fade-up"  // Add animation effect for header
+        data-aos="fade-up"
       >
         <div className="header-content">
           <h1>About Us</h1>
@@ -59,12 +63,14 @@ const App = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="container1">
+      <div className={`container ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
         {cards.map((card, index) => (
           <div className="card-wrapper" key={card.id}>
             <div
-              className={`card ${index === 1 ? "card-left" : index % 2 === 0 ? "card-left" : "card-right"}`}
-              data-aos={index === 1 ? "fade-left" : "fade-right"}  
+              className={`card ${
+                index === 1 ? "card-left" : index % 2 === 0 ? "card-left" : "card-right"
+              } ${theme === "dark" ? "dark-card" : "light-card"}`}
+              data-aos={index === 1 ? "fade-left" : "fade-right"}
             >
               {index % 2 === 0 && (
                 <img src={card.image} alt={card.title} className="card-image" />
@@ -82,7 +88,7 @@ const App = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

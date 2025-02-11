@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import Slider from "react-slick";
 import "../styles/Offer.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ThemeContext } from "../components/ThemeContext"; // Import ThemeContext
 
 const teamMembers = [
   {
@@ -17,12 +18,12 @@ const teamMembers = [
   },
   {
     name: "Construction",
-    role: "  A site engineer, guided by an experienced project coordinator, manages on-site construction from the foundation stage to key handover.",
+    role: "A site engineer, guided by an experienced project coordinator, manages on-site construction from the foundation stage to key handover.",
     image: "https://img.freepik.com/free-photo/high-angle-measuring-tools-still-life_23-2150440970.jpg?uid=R173554599&ga=GA1.1.1281800808.1725295084&semt=ais_hybrid",
   },
   {
     name: "Key Handover",
-    role: " Construction is completed within the agreed timeline, and the client receives the keys along with a formal handover kit, ensuring a smooth transition to their new home.",
+    role: "Construction is completed within the agreed timeline, and the client receives the keys along with a formal handover kit, ensuring a smooth transition to their new home.",
     image: "https://thumbs.dreamstime.com/b/key-handover-scene-where-real-estate-agent-landlord-hands-over-keys-to-new-house-owner-tenant-property-investor-292194499.jpg",
   },
 ];
@@ -52,6 +53,7 @@ const AnimatedCounter = ({ endValue, duration, isVisible }) => {
 };
 
 const TeamSection = () => {
+  const { theme } = useContext(ThemeContext); // Access the current theme
   const factsSectionRef = useRef(null);
   const [isFactsVisible, setIsFactsVisible] = useState(false);
 
@@ -114,7 +116,7 @@ const TeamSection = () => {
   }, []);
 
   return (
-    <div>
+    <div className={`team-section ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
       <section className="offer-section">
         <h2 className="offer-title">What We Offer</h2>
         <Slider {...settings} className="offer-carousel">

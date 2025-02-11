@@ -2,7 +2,7 @@
   text-align: center;
   padding: 20px 60px;
   position: relative;
-  background-image: url('../assets/Pricingbg.svg');
+  /* background-image: url('../assets/Pricingbg.svg'); */
   background-size: cover;
   background-position: center;
 }
@@ -250,4 +250,97 @@
     height: 240px;
     width: 100%;
   }
+}
+
+/* Dark Theme Enhancements */
+.dark-theme {
+  background: linear-gradient(135deg, #121212, #1a1a1a); 
+  color: #ffffff;
+}
+
+/* Dark Theme - Offer Section */
+.dark-theme .offer-section {
+  /* background: linear-gradient(135deg, #1a1a1a, #222222); */
+  padding: 40px 60px;
+  border-radius: 10px;
+}
+
+.dark-theme .offer-section h2 {
+  color: #FFBC13;
+  text-shadow: 2px 2px 5px rgba(255, 188, 19, 0.5);
+}
+
+/* Dark Theme - Offer Cards */
+.dark-theme .offer-carousel .offer-member {
+  background: #222; /* Dark Background */
+  color: #ddd;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Glow Effect */
+.dark-theme .offer-carousel .offer-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
+  background: #333;
+}
+
+/* Dark Theme - Offer Member Name */
+.dark-theme .offer-member-name {
+  color: #FFBC13;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(255, 188, 19, 0.7);
+}
+
+/* Dark Theme - Role Styling */
+.dark-theme .offer-member-role {
+  color: #ddd;
+}
+
+/* Dark Theme - Facts Section */
+.dark-theme .facts-section {
+  background: radial-gradient(circle, #1a1a1a, #111);
+  padding: 80px 20px;
+}
+
+/* .dark-theme .fact {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+.dark-theme .fact:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.25);
+}
+
+.dark-theme .fact h4 {
+  color: #FFBC13;
+  text-shadow: 2px 2px 5px rgba(255, 188, 19, 0.5);
+}
+
+.dark-theme .fact p {
+  color: #ddd;
+}
+
+/* Dark Theme - Image Border */
+.dark-theme .offer-member-image {
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  transition: border 0.3s ease;
+}
+
+.dark-theme .facts-section {
+  text-align: center;
+  background-size: cover;
+  background-image: url('../assets/Awesomebg.jpg');    
+  color: white;
+  background-repeat: no-repeat; 
+  padding: 60px 0;
+  width: 100%; 
+  margin: 0; 
+  box-sizing: border-box;
+  position: relative;
 }

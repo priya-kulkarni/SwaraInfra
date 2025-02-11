@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import Slider from "react-slick";
 import "../styles/TeamSection.css";
-import AOS from "aos";  // Import AOS
-import "aos/dist/aos.css";  // Import AOS styles
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-
+import { ThemeContext } from "../components/ThemeContext"; // Import ThemeContext
 
 const teamMembers = [
   {
@@ -46,14 +42,14 @@ const teamMembers = [
 ];
 
 const TeamSection = () => {
+  const { theme } = useContext(ThemeContext); // Access the current theme
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <button className="slick-next">Next</button>,  
-    prevArrow: <button className="slick-prev">Previous</button>,  
     responsive: [
       {
         breakpoint: 1024,
@@ -76,25 +72,14 @@ const TeamSection = () => {
     ],
   };
 
-  // Initialize AOS on component mount
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,  // Animation duration
-      once: true,      // Animation happens once
-    });
-  }, []);
-
   return (
-    <section className="team-section">
-      <h2 className="team-title">Meet Our Team</h2>
+    <section
+      className={`team-section ${theme === "dark" ? "dark-theme" : "light-theme"}`}
+    >
+      <h3 className="team-title">MEET OUR TEAM</h3>
       <Slider {...settings} className="team-carousel">
         {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="team-member"
-            data-aos="fade-up"  // AOS effect for each team member
-            data-aos-delay={`${index * 100}`}  // Stagger the animations
-          >
+          <div key={index} className="team-member">
             <img
               src={member.image}
               alt={member.name}

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useContext } from "react";
 import Slider from "react-slick";
 import PremiumPage from "./Premium";
 import Premiumplus from "./Premium+";
@@ -10,15 +10,15 @@ import TheOne from "./TheOne";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/PricingCarouselWithSlider.css";
-import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS CSS
+import { ThemeContext } from "../components/ThemeContext"; // Import ThemeContext
 
 const PricingCarouselWithSlider = () => {
+  const { theme } = useContext(ThemeContext); // Access the current theme
   const [activeCard, setActiveCard] = useState(null);
   const [animationKey, setAnimationKey] = useState(0);
   const [priceRange, setPriceRange] = useState(2170);
   const sliderRef = useRef(null);
-  const activeCardRef = useRef(null); // Ref for the active card container
+  const activeCardRef = useRef(null);
 
   const plans = [
     {
@@ -29,7 +29,7 @@ const PricingCarouselWithSlider = () => {
       component: <PremiumPage />,
     },
     {
-      title: "Premium +",
+      title: "Premium+",
       price: 2399,
       buttonText: "Upgrade to Premium+",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
@@ -43,7 +43,7 @@ const PricingCarouselWithSlider = () => {
       component: <Luxury />,
     },
     {
-      title: "Luxury +",
+      title: "LuxuryPlus",
       price: 2799,
       buttonText: "Explore Luxury+",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
@@ -57,14 +57,14 @@ const PricingCarouselWithSlider = () => {
       component: <FreedomPage />,
     },
     {
-      title: "Freedom +",
+      title: "Freedomplus",
       price: 2650,
       buttonText: "Upgrade to Freedom+",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
       component: <FreedomPlus />,
     },
     {
-      title: "The One +",
+      title: "TheOneplus",
       price: 3399,
       buttonText: "Experience The One+",
       features: ["Design and drawing", "Civil construction", "Architecture design", "Interior design"],
@@ -112,23 +112,13 @@ const PricingCarouselWithSlider = () => {
     }
   };
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, 
-      easing: "ease-in-out", 
-      once: true, 
-    });
-  }, []);
-
   return (
-    <div className="carousel-container">
-      <h2 className="carousel-header" data-aos="fade-up">
-        Building Packages
-      </h2>
-      <p className="carousel-subtext" data-aos="fade-up" data-aos-delay="100">
-        Click on a card to display more details!
-      </p>
-      <div className="price-slider" data-aos="fade-up" data-aos-delay="200">
+    <div
+      className={`carousel-container ${theme === "dark" ? "dark-theme" : "light-theme"}`}
+    >
+      <h2 className={`carousel-header ${theme === "dark" ? "dark-theme" : "light-theme"}`}>Building Packages</h2>
+      <p className={`carousel-subtext ${theme === "dark" ? "dark-theme" : "light-theme"}`}>Click on a card to display more details!</p>
+      <div className="price-slider">
         <input
           type="range"
           min="0"
@@ -142,15 +132,9 @@ const PricingCarouselWithSlider = () => {
       {/* Main Slider */}
       <Slider {...settings} ref={sliderRef}>
         {plans.map((plan, index) => (
-          <div
-            key={index}
-            className="pricing-card"
-            onClick={() => handleCardClick(plan)}
-            data-aos="zoom-in"
-            data-aos-delay={`${index * 100}`}
-          >
+          <div key={index} className={`pricing-card ${theme === "dark" ? "dark-theme" : "light-theme"}`} onClick={() => handleCardClick(plan)}>
             <h3>{plan.title}</h3>
-            <p className="price">Price: Rs {plan.price}</p>
+            <p className={`price ${theme === "dark" ? "dark-theme" : "light-theme"}`}>Price: Rs {plan.price}</p>
             <ul>
               {plan.features && plan.features.length > 0 ? (
                 plan.features.map((feature, i) => <li key={i}>{feature}</li>)
@@ -165,7 +149,7 @@ const PricingCarouselWithSlider = () => {
 
       {/* Display Active Card Details */}
       {activeCard && (
-        <div ref={activeCardRef} key={animationKey} className="active-card animated-card" data-aos="fade-up">
+        <div ref={activeCardRef} key={animationKey} className={`active-card animated-card ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
           {activeCard.component}
         </div>
       )}

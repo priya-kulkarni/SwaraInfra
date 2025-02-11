@@ -1,0 +1,96 @@
+/* Partners Section */
+.partners {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.partners h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    font-family: lilita one;
+    font-size: 40px;
+}
+
+.subtext {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Partners Container */
+.partners-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Partner Card */
+.partner {
+    text-align: center;
+    width: 160px;
+    height: 160px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+}
+
+.partner img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.partner:hover {
+    border-color: #1650e2;
+    box-shadow: 0 4px 10px rgba(22, 80, 226, 0.2);
+}
+
+.partner:hover img {
+    transform: scale(1.05);
+}
+
+.partner h4 {
+    font-size: 16px;
+    color: #6c7a89;
+    margin-top: 10px;
+}
+
+/* Dark Theme */
+.dark {
+    background-color: #121212;
+    color: #fff;
+}
+
+.dark .partners h2{
+    color: #FFBC13;
+}
+.dark .subtext {
+    color: #FFBC13;
+}
+
+.dark .partner {
+    background-color: #333;
+    border: 2px solid #555;
+}
+
+.dark .partner h4 {
+    color: #ddd;
+}
+
+.dark .partner:hover {
+    border-color: #1a73e8;
+    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+}

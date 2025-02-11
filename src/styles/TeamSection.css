@@ -2,7 +2,7 @@
   text-align: center;
   padding: 100px 80px;
   position: relative;
-  background-image: url('../assets/Teambg.svg');
+  /* background-image: url('../assets/Teambg.svg'); */
   background-size: cover;
   background-position: center;
 }
@@ -83,4 +83,8 @@
   .team-title{
     font-size: 20px;
   }
+}
+
+.team-section.dark-theme h3{
+  color: #FFBC13;
 }

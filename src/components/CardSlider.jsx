@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import "../styles/CardSlider.css"; 
-
-import AOS from "aos";
-import "aos/dist/aos.css"; 
+import React, { useContext } from "react";
+import "../styles/CardSlider.css"; // Import the CSS for the slider
+import { ThemeContext } from "../components/ThemeContext"; // Import ThemeContext
 
 const CardSlider = () => {
+  const { theme } = useContext(ThemeContext); // Access the current theme
+
   const cards = [
     {
       title: "1. Select any package",
-      icon: "📦", 
+      icon: "📦", // Replace with actual icons/images
     },
     {
       title: "2. Review & compare briefly",
@@ -24,28 +24,15 @@ const CardSlider = () => {
     },
   ];
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, 
-      easing: "ease-in-out", 
-      once: true, 
-    });
-  }, []);
-
   return (
-    <div className="slider-container">
-      <h2 data-aos="fade-up">How It Works</h2>
-      <p data-aos="fade-up" data-aos-delay="100">Convenience, & Transparency at your fingertips.</p>
+    <div className={`slider-container ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
+      <h2 className={`heading ${theme === "dark" ? "dark-theme" : "light-theme"}`}>How It Works</h2>
+      <p className={`description1 ${theme === "dark" ? "dark-theme" : "light-theme"}`}>Convenience, & Transparency at your fingertips.</p>
       <div className="card-grid">
         {cards.map((card, index) => (
-          <div
-            key={index}
-            className="slider-card"
-            data-aos="zoom-in"
-            data-aos-delay={`${index * 200}`} 
-          >
-            <div className="card-icon" data-aos="fade-in">{card.icon}</div>
-            <h3>{card.title}</h3>
+          <div key={index} className={`slider-card ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
+            <div className={`card-icon ${theme === "dark" ? "dark-theme" : "light-theme"}`}>{card.icon}</div>
+            <h3 className={`card-title ${theme === "dark" ? "dark-theme" : "light-theme"}`}>{card.title}</h3>
           </div>
         ))}
       </div>

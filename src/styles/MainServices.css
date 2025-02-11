@@ -2,20 +2,13 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  margin-bottom: 50px;
+  padding: 40px 40px;
 }
 
 .main-services-container h2 {
   text-align: center;
   color: #4B0082;
-  padding: 40px 40px;
-  position: relative;
-  background-color: rgb(252, 232, 232);
-  background-image: url('../assets/Cardsliderbg.png');
-  background-size: cover;
-  background-position: center;
-  font-family: lilita one;
-  font-size: 40px;
+  padding: 20px 40px;
 }
 
 .card4 {
@@ -29,13 +22,24 @@
   border-radius: 10px;
   max-width: 800px;
   margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  font-family: Arial, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode support for card */
+.main-services-container.dark .card4 {
+  background: #1e1e1e; /* Darker card background */
+  border: 2px solid #333; /* Adjust border for dark mode */
+  color: #f5f5f5;
 }
 
 .card4:hover {
-  transform: translateY(-10px); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust image brightness in dark mode */
+.main-services-container.dark .card4-image {
+  filter: brightness(0.9);
 }
 
 .card4-content {
@@ -56,11 +60,11 @@
   width: 120px;
   border-radius: 20px;
   height: auto;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 .card4:hover .card4-image {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .card4-text {
@@ -71,30 +75,48 @@
   margin: 0;
   font-size: 20px;
   color: #333;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
+}
+
+/* Dark mode text color adjustments */
+.main-services-container.dark .card4-text h3 {
+  color: #FFBC13; /* Yellow text for better contrast */
+}
+
+.main-services-container.dark .card4-text p {
+  color: #ccc;
 }
 
 .card4-text p {
   margin-top: 10px;
   font-size: 16px;
   color: #555;
-  transition: color 0.3s ease; 
-  font-size: 18px;
-  font-family: Arial, sans-serif;
+  transition: color 0.3s ease;
 }
 
 .card4:hover .card4-text h3 {
-  color: #FFBC13; 
+  color: #FFBC13;
 }
 
-.card4:hover .card4-text p {
-  color: #333; 
-}
-
+/* Responsive Design */
 @media (min-width: 768px) {
   .card4-container {
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
-    font-size: 16px;
   }
+}
+
+/* Light & Dark Mode Styling */
+.main-services-container.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.main-services-container.dark {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.main-services-container.dark h2 {
+  color: #FFBC13;
 }

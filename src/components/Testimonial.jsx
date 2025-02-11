@@ -1,117 +1,91 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import "../styles/Testimonial.css";
-import AOS from "aos";
-import "aos/dist/aos.css"; 
+import { ThemeContext } from "../components/ThemeContext"; // Import ThemeContext
 
+const testimonials = [
+  {
+    id: 1,
+    name: "Alice Johnson",
+    role: "Software Engineer",
+    text: "This platform helped me find my dream job. ",
+    image: "https://html.rrdevs.net/preview/ribuild/assets/imgs/client-feedback/testi-author-1.png",
+  },
+  {
+    id: 2,
+    name: "David Smith",
+    role: "Marketing Manager",
+    text: "I found the perfect candidate through this website.",
+    image: "https://html.rrdevs.net/preview/ribuild/assets/imgs/client-feedback/testi-author-1.png",
+  },
+  {
+    id: 3,
+    name: "Sophia Brown",
+    role: "Product Designer",
+    text: "A very professional and efficient platform.",
+    image: "https://html.rrdevs.net/preview/ribuild/assets/imgs/client-feedback/testi-author-1.png",
+  },
+  {
+    id: 4,
+    name: "Michael Lee",
+    role: "UX Designer",
+    text: "User-friendly interface and excellent customer support!",
+    image: "https://html.rrdevs.net/preview/ribuild/assets/imgs/client-feedback/testi-author-1.png",
+  },
+  {
+    id: 5,
+    name: "Emma White",
+    role: "HR Specialist",
+    text: "The best job portal I’ve used.",
+    image: "https://html.rrdevs.net/preview/ribuild/assets/imgs/client-feedback/testi-author-1.png",
+  },
+  {
+    id: 6,
+    name: "James Wilson",
+    role: "Project Manager",
+    text: "Smooth process, great recommendations, and hiring.",
+    image: "https://html.rrdevs.net/preview/ribuild/assets/imgs/client-feedback/testi-author-1.png",
+  },
+];
 
-const PartnersTestimonials = () => {
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
-
-  const testimonials = [
-    {
-      text: "This is a great company to work with!",
-      author: "Jane Doe",
-      position: "CEO",
-      image: "https://themes247.net/html5/construction-template/demo/assets/img/testimonials/3.jpg",
-      rating: "⭐⭐⭐⭐⭐",
-    },
-    {
-      text: "Excellent quality and great support!",
-      author: "John Smith",
-      position: "Manager",
-      image: "https://themes247.net/html5/construction-template/demo/assets/img/testimonials/2.jpg",
-      rating: "⭐⭐⭐⭐",
-    },
-    {
-      text: "Professional and reliable services.",
-      author: "Clark",
-      position: "Director",
-      image: "https://themes247.net/html5/construction-template/demo/assets/img/testimonials/1.jpg",
-      rating: "⭐⭐⭐⭐⭐",
-    },
-  ];
-
-  const nextTestimonial = () => {
-    setTestimonialIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setTestimonialIndex(
-      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
-    );
-  };
-
-  const currentTestimonial = testimonials[testimonialIndex];
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      easing: "ease-in-out", // Easing function
-      once: true, // Animation happens once
-    });
-  }, []);
+const TestimonialSlider = () => {
+  const { theme } = useContext(ThemeContext); // Access theme from context
 
   return (
-    <div className="container">
-      <div className="content">
-        {/* Partners Section */}
-        <div className="partners-section" data-aos="fade-up">
-          <h2>Our Partners</h2>
-          <div className="partners-grid">
-            <div className="partner-card" data-aos="fade-up" data-aos-delay="100">
-              <img
-                src="https://www.swarainfra.homes/static/media/Acc-removebg-preview.e93f3be7f4e82697aaa8.png"
-                alt="Partner 1"
-              />
-              <p>Partner 1</p>
+    <div className={`testimonials-sect ${theme}`}>
+      <h2>Testimonial</h2>
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        spaceBetween={20}
+        slidesPerView={3}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop={true}
+        breakpoints={{
+          1024: { slidesPerView: 3 },
+          768: { slidesPerView: 2 },
+          425: { slidesPerView: 1 },
+          375: { slidesPerView: 1 },
+          320: { slidesPerView: 1 }
+        }}
+        className="testimonials-slider"
+      >
+        {testimonials.map((testimonial) => (
+          <SwiperSlide key={testimonial.id}>
+            <div className="testimonial-card">
+              <img src={testimonial.image} alt={testimonial.name} className="testimonial-img" />
+              <h4>{testimonial.name}</h4>
+              <p className="testimonial-role">{testimonial.role}</p>
+              <p className="testimonial-text">"{testimonial.text}"</p>
             </div>
-            <div className="partner-card" data-aos="fade-up" data-aos-delay="200">
-              <img
-                src="https://www.swarainfra.homes/static/media/Kajaria-removebg-preview.f92111de18baf73b88eb.png"
-                alt="Partner 2"
-              />
-              <p>Partner 2</p>
-            </div>
-            <div className="partner-card" data-aos="fade-up" data-aos-delay="300">
-              <img
-                src="https://www.swarainfra.homes/static/media/kamdenu-removebg-preview.37bb867c618e4a9bf62a.png"
-                alt="Partner 3"
-              />
-              <p>Partner 3</p>
-            </div>
-            <div className="partner-card" data-aos="fade-up" data-aos-delay="400">
-              <img
-                src="https://www.swarainfra.homes/static/media/fixit-removebg-preview.f42fd6b5aaabeb31698e.png"
-                alt="Partner 4"
-              />
-              <p>Partner 4</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Testimonials Section */}
-        <div className="testimonials-section" data-aos="fade-up" data-aos-duration="1500">
-          <h2>Testimonials</h2>
-          <div className="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-            <p>"{currentTestimonial.text}"</p>
-            <div className="testimonial-author">
-              <img src={currentTestimonial.image} alt="Author" />
-              <div>
-                <h4>{currentTestimonial.author}</h4>
-                <p>{currentTestimonial.position}</p>
-              </div>
-              <span className="rating">{currentTestimonial.rating}</span>
-            </div>
-          </div>
-          {/* Navigation Buttons */}
-          <div className="testimonial-buttons" data-aos="fade-up" data-aos-delay="300">
-            <button onClick={prevTestimonial}>Previous</button>
-            <button onClick={nextTestimonial}>Next</button>
-          </div>
-        </div>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
 
-export default PartnersTestimonials;
+export default TestimonialSlider;

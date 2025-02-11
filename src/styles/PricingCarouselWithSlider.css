@@ -1,45 +1,37 @@
-
+/* Carousel Container */
 .carousel-container {
   text-align: center;
   padding: 2rem;
   color: #333;
   background: none;
   margin-top: 110px;
-  position: relative;
-  background-image: url('../assets/Pricingbg.svg');
-  background-size: cover;
-  background-position: center;
 }
 
 .carousel-header {
   font-size: 2.5rem;
-  color: #4B0082;
+  font-weight: bold;
+  color: #222;
   margin-bottom: 0.5rem;
-  font-size: 40px;
-  font-weight: 400;
-  margin: 20px;
-  font-family: lilita one;
 }
 
 .carousel-subtext {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  font-family: Arial, sans-serif;
-  color: #555;
+  color: #666;
 }
 
 .price-slider {
   padding-bottom: 40px;
 }
 
-
+/* Pricing Card */
 .pricing-card {
   background: whitesmoke;
   color: #333;
   padding: 1.5rem;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  width: 280px; 
+  width: 280px; /* Default width */
   margin: 20px auto;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -55,17 +47,13 @@
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  /* font-size: 18px; */
-  font-family:Geologica;
-  color: #555;
 }
 
 .price {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #4B0082;
-  font-family:Geologica;
+  color: #FFBC13;
 }
 
 .pricing-card ul {
@@ -74,8 +62,6 @@
   margin: 0;
   margin-bottom: 1rem;
   font-size: 1rem;
-  font-family: Arial, sans-serif;
-  color: black;
 }
 
 .pricing-card ul li {
@@ -92,8 +78,6 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family:Geologica;
-  color: black;
 }
 
 .buy-btn:hover {
@@ -101,6 +85,7 @@
 }
 
 .slick-slide {
+  /* opacity: 0.6; */
   transform: scale(0.9);
   transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
   z-index: 0;
@@ -131,7 +116,7 @@
   animation: slide-up 0.5s ease, highlight 0.5s ease;
 }
 
-
+/* Keyframes */
 @keyframes slide-up {
   from {
     transform: translateY(30px);
@@ -143,7 +128,7 @@
   }
 }
 
-
+/* Price Slider */
 .price-slider {
   margin-bottom: 2rem;
   display: flex;
@@ -173,32 +158,26 @@
   cursor: pointer;
 }
 
-
+/* Responsive Design */
 @media (max-width: 768px) {
-  .carousel-header{
-    font-size: 40px;
-  }
   .carousel-container {
     padding: 1rem;
     margin-top: 150px;
   }
 
- 
+  /* Flexbox for responsive cards */
   .pricing-card {
     width: 90%;
     margin: 10px auto;
   }
 
- 
+  /* Adjust the layout for the slick carousel */
   .slick-center {
     transform: scale(1.05);
   }
 }
 
 @media (max-width: 425px) {
-  .carousel-header{
-    font-size: 30px;
-  }
   .carousel-container {
     margin-top: 180px;
   }
@@ -223,9 +202,6 @@
 }
 
 @media (max-width: 375px) {
-  .carousel-header{
-    font-size: 25px;
-  }
   .pricing-card {
     width: 100%;
     margin: 10px auto;
@@ -247,9 +223,6 @@
 }
 
 @media (max-width: 320px) {
-  .carousel-header{
-    font-size: 20px;
-  }
   .pricing-card {
     width: 100%;
     margin: 10px auto;
@@ -268,4 +241,30 @@
     padding: 0.5rem 0.8rem;
     font-size: 0.8rem;
   }
+}
+
+.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+.carousel-container.dark-theme {
+  background-color: #121212;
+}
+
+.carousel-header.dark-theme {
+  color: #FFBC13;
+}
+
+.carousel-subtext.dark-theme {
+  color: #FFBC13;
+}
+
+.pricing-card.dark-theme {
+  /* background-color: #1d1d1d; */
+  border: 1px solid #444;
+}
+
+.price.dark-theme {
+  color: #fff;
 }
