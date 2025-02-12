@@ -3,6 +3,10 @@
   grid-template-columns: 1fr;
   gap: 20px;
   padding: 40px 40px;
+  position: relative;
+  /* background-image: url('../assets/Contactbg.png'); */
+  background-size: cover;
+  background-position: center;
 }
 
 .main-services-container h2 {

@@ -116,8 +116,8 @@ const PricingCarouselWithSlider = () => {
     <div
       className={`carousel-container ${theme === "dark" ? "dark-theme" : "light-theme"}`}
     >
-      <h2 className={`carousel-header ${theme === "dark" ? "dark-theme" : "light-theme"}`}>Building Packages</h2>
-      <p className={`carousel-subtext ${theme === "dark" ? "dark-theme" : "light-theme"}`}>Click on a card to display more details!</p>
+      <h2>Building Packages</h2>
+      <p>Click on a card to display more details!</p>
       <div className="price-slider">
         <input
           type="range"

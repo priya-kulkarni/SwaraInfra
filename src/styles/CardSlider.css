@@ -97,10 +97,14 @@
   color: #fff;
 }
 
+.dark-theme .card-icon {
+  color: #fff;
+  font-size: 70px; /* Ensuring icon size is increased in dark mode too */
+}
+
 .dark-theme .heading,
 .dark-theme .description1,
 .dark-theme .slider-card {
-  background-color: #1e1e1e;
   color: #FFBC13;
 }
 

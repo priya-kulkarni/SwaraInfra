@@ -3,6 +3,10 @@
   /* padding: 60px 20px; */
   text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  background-image: url('https://www.vitagranito.com/dist/client/img/footer-img.svg');
+  background-size: cover;
+  background-position: center;
 }
 
 /* Light Theme */

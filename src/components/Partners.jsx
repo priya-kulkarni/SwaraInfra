@@ -14,7 +14,7 @@ const Partners = () => {
 
   return (
     <section className={`partners ${theme}`}>
-      <h2>Our Partners</h2>
+      <h2 className="subtext">Our Partners</h2>
       <p className="subtext">Clients Template for Business Website</p>
       <div className="partners-container">
         {partners.map((partner) => (

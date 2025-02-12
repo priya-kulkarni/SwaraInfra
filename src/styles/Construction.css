@@ -9,6 +9,11 @@
 .faq-container {
   font-family: Arial, sans-serif;
   /* margin-left: 70px; */
+  /* background-image: url("../assets/Pricingbg.svg"); */
+  position: relative;
+  background-image: url('../assets/Pricingbg.svg');
+  background-size: cover;
+  background-position: center;
 }
 
 .faq-heading {
@@ -84,7 +89,7 @@
 
 .dark-theme .faq-question:hover {
   background-color: var(--accent-color);
-  color: #FFBC13;
+  color: black;
 }
 
 .dark-theme .faq-answer {

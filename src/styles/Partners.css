@@ -4,6 +4,10 @@
     padding: 50px 20px;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
+    position: relative;
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
 }
 
 .partners h2 {
@@ -74,9 +78,6 @@
     color: #fff;
 }
 
-.dark .partners h2{
-    color: #FFBC13;
-}
 .dark .subtext {
     color: #FFBC13;
 }
