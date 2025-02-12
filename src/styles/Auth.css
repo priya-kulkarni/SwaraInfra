@@ -1,46 +1,178 @@
-/* Light Theme (Default) */
+/* .unique-auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('../assets/Loginbg.jpg') no-repeat center center fixed;
+  background-size: cover; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  margin-top: 30px;
+}
+
+.unique-auth-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50; 
+  text-align: center;
+  font-family:Geologica;
+  color: #555;
+}
+
+.unique-auth-form {
+  background-color: rgba(255, 255, 255, 0.9); 
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  width: 350px;
+  max-width: 90%;
+  text-align: left;
+}
+
+.unique-auth-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #34495e; 
+  font-weight: 600;
+  font-size: 18px;
+  font-family:Geologica;
+  color: #555;
+}
+
+.unique-auth-input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+  font-size: 18px;
+  font-family:Geologica;
+  color: #555;
+}
+
+.unique-auth-input:focus {
+  outline: none;
+  border-color: #3498db; 
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
+}
+
+.unique-auth-button {
+  background-color: #3498db; 
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+  font-family:Geologica;
+  color: #555;
+}
+
+.unique-auth-button:hover {
+  background-color: #2980b9; 
+}
+
+.unique-auth-footer {
+  margin-top: 1rem;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.unique-auth-footer span {
+  color: #3498db; 
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.unique-auth-footer span:hover {
+  color: #2980b9; 
+}
+
+@media (max-width: 480px) {
+  .unique-auth-form {
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .unique-auth-heading {
+    font-size: 1.8rem;
+  }
+} */
+
+/* Shared container styling for login and registration */
 .unique-auth-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('../assets/Contactbg.png') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #eef2f3; /* Light background color */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 1rem;
-  margin-top: 30px;
-  transition: background 0.3s ease, color 0.3s ease;
+  margin-top: 110px;
 }
 
+/* Heading for the authentication forms */
+.unique-auth-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50; /* Dark gray-blue */
+}
+
+/* Authentication form container */
 .unique-auth-form {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #ffffff;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   width: 350px;
   max-width: 90%;
   text-align: left;
-  font-family: Arial, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.unique-auth-heading,
-.unique-auth-label,
-.unique-auth-footer {
-  color: #2c3e50;
+/* Labels for form fields */
+.unique-auth-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #34495e; /* Slightly darker gray */
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
+/* Input fields styling */
 .unique-auth-input {
-  background-color: white;
-  color: black;
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
   border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
 }
 
+.unique-auth-input:focus {
+  outline: none;
+  border-color: #3498db; /* Blue border on focus */
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
+}
+
+/* Button styling */
 .unique-auth-button {
-  background-color: #3498db;
-  color: white;
+  background-color: #3498db; /* Primary blue */
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
@@ -49,60 +181,89 @@
 }
 
 .unique-auth-button:hover {
-  background-color: #2980b9;
+  background-color: #2980b9; /* Darker blue on hover */
 }
 
-/* 🔥 Dark Theme Styles */
+/* Footer links for form navigation */
+.unique-auth-footer {
+  margin-top: 1rem;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.unique-auth-footer span {
+  color: #3498db; /* Blue link color */
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.unique-auth-footer span:hover {
+  color: #2980b9; /* Darker blue on hover */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 480px) {
+  .unique-auth-form {
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .unique-auth-heading {
+    font-size: 1.8rem;
+  }
+}
+
+/* Dark Theme Styling */
+.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+
 .dark-theme .unique-auth-container {
-  background: #181818;
+  background-color: #1e1e1e;
 }
 
-.dark-theme .accordion-container h1{
-  color: #FFBC13;
+.dark-theme .unique-auth-heading {
+  color: #f0f0f0;
 }
 
 .dark-theme .unique-auth-form {
-  background-color: #222;  /* Dark background */
-  color: white;
+  background-color: #2a2a2a;
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
 }
 
-.dark-theme .unique-auth-heading,
-.dark-theme .unique-auth-label,
-.dark-theme .unique-auth-footer {
-  color: #ddd;  /* Light gray text */
+.dark-theme .unique-auth-label {
+  color: #f0f0f0;
 }
 
 .dark-theme .unique-auth-input {
   background-color: #333;
   color: white;
-  border: 1px solid #444;
+  border: 1px solid #555;
 }
 
 .dark-theme .unique-auth-input:focus {
-  border-color: #ffcc00;
-  box-shadow: 0 0 6px rgba(255, 204, 0, 0.5);
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
 }
 
 .dark-theme .unique-auth-button {
-  background-color: #ffcc00;
-  color: black;
+  background-color: #3498db;
+  color: white;
 }
 
 .dark-theme .unique-auth-button:hover {
-  background-color: #e6b800;
+  background-color: #2980b9;
+}
+
+.dark-theme .unique-auth-footer {
+  color: #f0f0f0;
 }
 
 .dark-theme .unique-auth-footer span {
-  color: #ffcc00;
+  color: #3498db;
 }
 
 .dark-theme .unique-auth-footer span:hover {
-  color: #e6b800;
+  color: #2980b9;
 }
-
-/* Smooth Theme Transition */
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-

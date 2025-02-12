@@ -1,76 +1,164 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
-import "../styles/Auth.css"; // Shared CSS for authentication
-import axios from "axios";
+import React, { useState, useContext } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { loginUser, registerUser } from '../services/api'; 
+import '../styles/Auth.css';
+import { ThemeContext } from '../components/ThemeContext';
 
-const SubscriptionForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [cookies, setCookie] = useCookies(["name", "email", "phone"]);
+// Login Component
+export const Login = ({ handleLogin }) => {
+  const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectTo = location.state?.from || '/';
+  
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
+  
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setCookie("name", name, { path: "/", maxAge: 86400 });
-    setCookie("email", email, { path: "/", maxAge: 86400 });
-    setCookie("phone", phone, { path: "/", maxAge: 86400 });
-
-    const formData = { name, email, phone };
+    setError('');
 
     try {
-      const response = await axios.post("http://localhost:8080/api/subscribe", formData, {
-        withCredentials: true,
-      });
-      alert("Subscription successful!");
-      navigate("/thank-you");
-    } catch (error) {
-      console.error("Error:", error.response || error.message);
-      alert("Something went wrong. Please try again later.");
+      const response = await loginUser(formData);
+      if (response.success) {
+        handleLogin();
+        navigate(redirectTo);
+      } else {
+        setError(response.error || 'Login failed');
+      }
+    } catch (err) {
+      setError('An error occurred. Please try again.');
     }
   };
 
   return (
-    <div className="unique-auth-container">
-      <h1 className="unique-auth-heading">Subscribe</h1>
-      
+    <div className={`unique-auth-container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+      <h1 className="unique-auth-heading">Login</h1>
       <form className="unique-auth-form" onSubmit={handleSubmit}>
+        {error && <p className="error-message">{error}</p>}
+        <label className="unique-auth-label">Email:</label>
+        <input
+          className="unique-auth-input"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          placeholder="Enter your email"
+        />
+        <label className="unique-auth-label">Password:</label>
+        <input
+          className="unique-auth-input"
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+          placeholder="Enter your password"
+        />
+        <button className="unique-auth-button" type="submit">
+          Login
+        </button>
+      </form>
+      <p className="unique-auth-footer">
+        Don't have an account? <span onClick={() => navigate('/register')}>Register here</span>
+      </p>
+    </div>
+  );
+};
+
+// Register Component
+export const Register = () => {
+  const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: '',
+    mobile_number: '',
+    email: '',
+    password: ''
+  });
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setSuccess('');
+
+    try {
+      const response = await registerUser(formData);
+      if (response.success) {
+        setSuccess('Registration successful! Redirecting to login...');
+        setTimeout(() => navigate('/login'), 2000);
+      } else {
+        setError(response.error || 'Registration failed');
+      }
+    } catch (err) {
+      setError('An error occurred. Please try again.');
+    }
+  };
+
+  return (
+    <div className={`unique-auth-container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+      <h1 className="unique-auth-heading">Register</h1>
+      <form className="unique-auth-form" onSubmit={handleSubmit}>
+        {error && <p className="error-message">{error}</p>}
+        {success && <p className="success-message">{success}</p>}
         <label className="unique-auth-label">Name:</label>
         <input
           className="unique-auth-input"
           type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
           required
           placeholder="Enter your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+        />
+        <label className="unique-auth-label">Mobile Number:</label>
+        <input
+          className="unique-auth-input"
+          type="tel"
+          name="mobile_number"
+          value={formData.mobile_number}
+          onChange={handleChange}
+          required
+          placeholder="Enter your mobile number"
         />
         <label className="unique-auth-label">Email:</label>
         <input
           className="unique-auth-input"
           type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
           required
           placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
         />
-        <label className="unique-auth-label">Phone No:</label>
+        <label className="unique-auth-label">Password:</label>
         <input
           className="unique-auth-input"
-          type="tel"
-          pattern="[0-9]{10}"
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
           required
-          placeholder="Enter your phone no"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          placeholder="Enter your password"
         />
         <button className="unique-auth-button" type="submit">
-          Subscribe
+          Register
         </button>
       </form>
+      <p className="unique-auth-footer">
+        Already have an account? <span onClick={() => navigate('/login')}>Login here</span>
+      </p>
     </div>
   );
 };
-
-export default SubscriptionForm;
